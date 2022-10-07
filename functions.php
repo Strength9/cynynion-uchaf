@@ -323,18 +323,18 @@ add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 */
 
 /**
-	 * Favicons
+	 * Favicons*/
 	 
 add_action( 'wp_head', 'ilc_favicon');
 function ilc_favicon(){
-	echo '<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/favicon-16x16.png">
-	<link rel="manifest" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/site.webmanifest">
-	<link rel="mask-icon" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/favicon.ico">
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/cynynion-uchaf/assets/img/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/cynynion-uchaf/assets/img/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/cynynion-uchaf/assets/img/fav/favicon-16x16.png">
+	<link rel="manifest" href="/wp-content/themes/cynynion-uchaf/assets/img/fav/site.webmanifest">
+	<link rel="mask-icon" href="/wp-content/themes/cynynion-uchaf/assets/img/fav/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/wp-content/themes/cynynion-uchaf/assets/img/fav/favicon.ico">
 	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="msapplication-config" content="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/browserconfig.xml">
+	<meta name="msapplication-config" content="/wp-content/themes/cynynion-uchaf/assets/img/fav/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">';
 }
-*/
+
