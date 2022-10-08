@@ -1,0 +1,100 @@
+.imagegridtextblock {
+	
+	
+	
+	
+	
+	
+	.contenttext {
+		
+	}
+	
+	.imagetextandgrid {
+		margin:auto;
+		max-width: $contentwidth;
+		width:90%;
+		display: grid; 
+		  grid-template-columns: 1fr; 
+		  grid-template-rows: minmax(0,auto) minmax(0,auto); 
+		  gap: 0px 0px; 
+		  grid-template-areas: 
+			"introduction" "imagedata" "contenttext"; 
+			
+			@media only screen and (min-width:800px) {
+				grid-template-columns: 1fr 1fr; 
+				  grid-template-rows: minmax(0,auto) minmax(0,1fr); 
+				  gap: 0px 0px; 
+				  grid-template-areas: 
+					"introduction introduction"
+					"imagedata contenttext"; 
+			}
+	
+		.introduction { 
+			grid-area: introduction; 
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			text-align:center;
+			
+			h1 {
+				margin:0 auto;
+				text-align:center;
+			}
+			h3 {
+				margin:0 auto;
+				text-align:center;
+			}
+		}
+		.imagedata { 
+			grid-area: imagedata; 
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+
+			
+			.image_grid{
+				width:90%;
+				margin:auto;
+			  display: grid; 
+			  grid-template-columns: 1fr 1fr 1fr; 
+			  grid-template-rows: 1fr; 
+			  gap: 0px 10px; 
+			  grid-template-areas:  ". . ." ;
+			  max-width:600px;
+			  
+			  @media only screen and (max-width:800px) {
+				  max-width:320px;
+				  background-color:pink;
+			  img {
+				  &:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9) {
+					  display:none;
+				  }
+			  }
+			  
+		  }
+				
+				@media only screen and (min-width:800px) {
+					max-width:430px;
+					grid-template-columns: 1fr 1fr 1fr; 
+					  grid-template-rows: 1fr 1fr 1fr; 
+					  gap: 0px 0px; 
+					  grid-template-areas: 
+						". . ."
+						". . ."
+						". . ."; 
+				}
+			}
+		}
+		.contenttext { 
+			grid-area: contenttext;
+			background-color:red;
+		 }
+	}
+	
+}

@@ -6,7 +6,7 @@ Post Types: post, page, custom-type
 Block SVG: block_template.svg
 Block Category: s9blocks
 */
-$sectionclass = 'cblock';
+$sectionclass = 'imagegridtextblock';
 /* --------------------------------------------------------------------------- */
 if( !empty( $block['data']['_is_preview'] ) ) {
 		echo' <img src="'.get_stylesheet_directory_uri().'/template-parts/previews/block_template.png" alt="Title Field">';
@@ -17,11 +17,13 @@ include('______partials_global.php');
 
 
 
+$section_title = ! empty( get_field('title') ) ? '<h1>'.get_field('title').'</h1>' : '';
+$strap_line = ! empty( get_field('strap_line') ) ? '<h3>'.get_field('strap_line').'</h3>' : '';
+$content = ! empty( get_field('content') ) ? get_field('content') : '';
 
-$section_title = ! empty( get_field('section_title') ) ? '<h1>'.get_field('section_title').'</h1>' : '';
 
 if( get_field('image_grid') ):
-	$imagedata ='';
+	$imagedata ='<div class="image_grid">';
 	while( the_repeater_field('image_grid') ):
 		
 	
@@ -39,13 +41,15 @@ if( get_field('image_grid') ):
 		};
 		
 	endwhile; 
+	$imagedata .= '</div>';
 endif;
 
 /* --------------------------------------------------------------------------- */
 echo '<section '.$anchor.' class="'.$blockclass .'">
-	<div class="wcp-columns">
-	 	<div class="wcp-column"></div>
-	 	<div class="wcp-column">'.$imagedata.'</div>
+	<div class="imagetextandgrid">
+	 	<div class="introduction">'.$section_title.$strap_line.'</div>
+		 <div class="imagedata">'.$imagedata.'</div>
+	 	<div class="contenttext">'.$content.'</div>
 	</div>
 </section>';
 ?>
