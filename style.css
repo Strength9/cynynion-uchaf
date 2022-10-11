@@ -448,6 +448,120 @@ p {
   opacity: 1;
 }
 
+/* .navigation-menu class: Navigation wrapper
+   .main-navigation class: Navigation links wrapper */
+/* Mobile Version */
+.navigation-menu {
+  position: relative;
+  border-bottom: 1px solid #e7e7e7;
+  background-color: black;
+  /* Mobile Version */
+  /* Desktop Version */
+}
+.navigation-menu .main-navigation {
+  display: none;
+  padding-left: 0px;
+}
+.navigation-menu .main-navigation li {
+  list-style-type: none;
+  margin: 0px auto;
+  text-align: center;
+}
+.navigation-menu .main-navigation li a {
+  color: #FFF;
+  margin: 0px 2px 0px 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+.navigation-menu .main-navigation li a:hover {
+  color: yellow;
+  transition: 0.3s ease;
+}
+.navigation-menu .menuopen {
+  margin: 5px 30px 5px 5px;
+  cursor: pointer;
+  font-size: 25px;
+  color: #FFF;
+}
+.navigation-menu .menuopen:hover {
+  color: yellow;
+}
+.navigation-menu #menu-toggle {
+  display: none;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: red;
+  display: block;
+  margin: 0;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation label.menuclose {
+  text-align: right;
+  margin: 20px 20px 20px auto;
+  font-size: 40px;
+  display: block;
+  width: 40px;
+  color: black;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation label.menuclose:hover {
+  color: yellow;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation li a {
+  color: #FFF;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation li a:hover {
+  color: yellow;
+}
+@media screen and (min-width: 505px) {
+  .navigation-menu .navigation-menu {
+    display: flex;
+    align-items: center;
+  }
+  .navigation-menu .main-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+  .navigation-menu .main-navigation li {
+    position: relative;
+  }
+  .navigation-menu .main-navigation li a {
+    padding: 5px 8px;
+  }
+  .navigation-menu .main-navigation li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: green;
+    margin: 0;
+    padding: 10px;
+  }
+  .navigation-menu .main-navigation li ul li {
+    white-space: nowrap;
+    display: block;
+    padding: 5px;
+    margin: 0;
+    white-space: nowrap;
+    display: block;
+    padding: 0px !important;
+  }
+  .navigation-menu .main-navigation li ul li a {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .navigation-menu label {
+    display: none;
+  }
+}
+
 .ps_left {
   text-align: left;
 }
@@ -646,4 +760,9 @@ p {
 .imagegridtextblock .imagetextandgrid .contenttext {
   grid-area: contenttext;
   background-color: red;
+}
+
+#wpforms-37 {
+  width: 400px !important;
+  margin: 200px auto;
 }

@@ -142,6 +142,9 @@ add_filter('image_size_names_choose', 'post_image_sizes');
 		wp_enqueue_style('custom_font', '//use.typekit.net/rir5arn.css');
 		wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v='.rand(111,999));
 		
+		
+		
+		wp_enqueue_script( 'xray', get_template_directory_uri() . '/assets/js/modern.js','','',true);
 		wp_enqueue_script( 'jquery-core' );
 		
 		wp_enqueue_script( 'xray', get_template_directory_uri() . '/assets/js/script.js','','',true);
@@ -295,7 +298,7 @@ function remove_posts_menu()
 	 * Font Awesome Kit Setup
 	 * 
 	 * This will add your Font Awesome Kit to the front-end, the admin back-end,
-	 * and the login screen area.
+	 * and the login screen area.*/
 	 
 	if (! function_exists('fa_custom_setup_kit') ) {
 	  function fa_custom_setup_kit($kit_url = '') {
@@ -309,9 +312,9 @@ function remove_posts_menu()
 		}
 	  }
 	}
-fa_custom_setup_kit('https://kit.fontawesome.com/23bfc676af.js');		
+fa_custom_setup_kit('https://kit.fontawesome.com/1db850bdc9.js');		
 
-*/
+
 /**
 	 * Google Fonts
 	 
@@ -336,5 +339,42 @@ function ilc_favicon(){
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="/wp-content/themes/cynynion-uchaf/assets/img/fav/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">';
+};
+
+
+function wpf_limit_date_picker() {
+	?>
+	<script type="text/javascript">
+		console.log ("Dave");
+
+			var disabledDays = [
+			   "20-10-2022", "22-10-2022", "25-10-2022"
+			];
+		
+		   //replace these with the id's of your datepickers
+		   jQuery("#datepicker").datepicker({
+			  dateFormat: 'dd-mm-yy',
+			  beforeShowDay: function(date){
+				 var day = date.getDay();
+				 var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+				 var isDisabled = ($.inArray(string, disabledDays) != -1);
+		
+				 //day != 0 disables all Sundays
+				 return [!isDisabled];
+			  },
+			  
+			  onClose: function() {
+				 
+				  
+					  $('#wpforms-37-field_3').val($(this).val());
+				
+			  }
+		   });
+
+	
+
+	</script>
+	<?php
 }
+add_action( 'wpforms_wp_footer_end', 'wpf_limit_date_picker', 10 );
 
