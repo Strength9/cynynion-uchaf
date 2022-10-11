@@ -7,24 +7,49 @@
 
 $DeskNavLink : #FFF;
 $DeskNavLinkHover : yellow;
+$dropdownbackground : orange;
 $MobileNavLink : #FFF;
 $MobileNavLinkHover : yellow;
 $MobileMenuOpen : #FFF;
 $MobileMenuOpenHover : yellow;
-$MobileMenuClose : black;
+$MobileMenuClose : #FFF;
 $MobileMenuCloseHover : yellow;
+$innerULborder : rgba(255,255,255,0.7);
+$overlaynavcolor : blue;
 
 .navigation-menu {
+	display:block;
   position: relative;
   border-bottom: 1px solid #e7e7e7;
   background-color:black;
+  overflow:hidden;
+  min-height:100px;
 
 /* Mobile Version */	
 	.main-navigation {
-  		display: none;
+  		
   		padding-left: 0px;
+		display:inline-block;
+		
+		div.logo {
+			
+			width:200px;
+			height:60px;
+			position:absolute;
+			left:10px;
+			top:10px;
+			a {
+				display:block;
+				width:100%;
+				height:100%;
+				background-color:pink;
+				color:#FFF;
+			}
+		}  
+		  
 		
 		li {
+			display: none;
   			list-style-type: none;
   			margin: 0px auto;
   			text-align: center;
@@ -43,16 +68,26 @@ $MobileMenuCloseHover : yellow;
 							}
 						}
 		}
-}
+	}
 	.menuopen {
-  	margin: 5px 30px 5px 5px;
-  	cursor: pointer;
-  	font-size: 25px;
-  	color: $MobileMenuOpen;
-	  	&:hover {
-		  	color:$MobileMenuOpenHover;
-	  	}
-}
+		position:absolute;
+		right:0;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		width:45px;
+		height:45px;
+  		margin: 20px 10px 5px auto;
+  		cursor: pointer;
+  		font-size: 35px;
+  		color: $MobileMenuOpen;
+	  		&:hover {
+		  		color:$MobileMenuOpenHover;
+	  		}
+	}
 	#menu-toggle {
   	display: none;
 }
@@ -63,88 +98,133 @@ $MobileMenuCloseHover : yellow;
 		bottom:0;
 		left:0;
 		right:0;
-		background-color:red;
+		background-color:$overlaynavcolor;
     	display: block;
     	margin:0;
-  	
-  	label.menuclose {
-	  	text-align:right;
-	  	margin:20px 20px 20px auto;
-	  	font-size:40px;
-	  	display:block;
-	  	width:40px;
-	  	color : $MobileMenuClose;
-	  	
-	  	&:hover {
-		  	color : $MobileMenuCloseHover;
-	  	}
-  	}
+  	  	padding:100px 0 0 ;
+  		label.menuclose {
+			  z-index:2100;
+			position:absolute;
+			right:0;
+			top:0;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			width:45px;
+			height:45px;
+			  margin: 20px 10px 5px auto;
+			  cursor: pointer;
+			  font-size: 35px;
+	  		color : $MobileMenuClose;
+	  		
+	  		&:hover {
+		  		color : $MobileMenuCloseHover;
+	  		}
+  		}
   	
   		li {
+			
+			  display:block;
 		  	a {color:$MobileNavLink;
 			  	
 			  	&:hover {
 				  	color:$MobileNavLinkHover;
 			  	}
 		  	}
+			 > ul {
+				 margin:0px auto;
+				 padding:8px 0;
+				 position:relative;
+				 display:block;
+				
+				 
+				 &:before {
+					 top:0;
+					 content:"";
+					 border-top: 1px dashed $innerULborder;
+					 width:80px;
+					 height:1px;
+					 display:block;
+					 margin:2px auto 5px;
+				 }
+				 &:after {
+					  bottom:0;
+					  content:"";
+					  border-top: 1px dashed $innerULborder;
+					  width:80px;
+					  height:1px;
+					  display:block;
+					  margin:10px auto 2px;
+				  }
+				 
+				 li {
+					 width:100%;
+					 margin:0 auto;
+					  padding:0;
+					 
+				 }
+			 }
 	  	}
 	}
 	
 /* Desktop Version */
 	@media screen and (min-width: 505px) {
-  	.navigation-menu {
+
 		//height: 70px;
 		display: flex;
 		align-items: center;
-  	}
-	
-  	.main-navigation {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		margin: 0;
-		padding:0;
-  	
-	
-  		li {
-			  position:relative;
-		  	a {
-				padding: 5px 8px;
-  		  	}
+
+  		.main-navigation {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			margin: 0;
+			padding:0;
+  		
 		
-			ul {display:none;
-				position:absolute;
-				top:100%;
-				background-color:green;
-				margin:0;
-				padding:10px;
-				
-				
-				li {white-space: nowrap;
-					display:block;
-					padding:5px;
+  			li {
+			  	position:relative;
+		  		a {
+					padding: 5px 8px;
+  		  		}
+			
+				ul {display:none;
+					position:absolute;
+					top:100%;
+					background-color:$dropdownbackground;
+					margin:0;
+					padding:10px;
 					
-						margin:0;
-						white-space: nowrap;
+					
+					li {white-space: nowrap;
 						display:block;
-						padding:0px !important;
+						padding:5px;
 						
-						a {
+							margin:0;
+							white-space: nowrap;
 							display:block;
-							margin:0!important;
-							padding:0!important;
-						}
+							padding:0px !important;
+							
+							a {
+								display:block;
+								margin:0!important;
+								padding:5px!important;
+							}
+					}
+					
 				}
 				
+				&:hover {
+					ul {display:block;}
+				}
 			}
 		}
-	}
-	
-	
-  	label {
-		display: none;
-  	}
-	
-	
+		
+  		label {
+			display: none;
+  		}
 	}
 }

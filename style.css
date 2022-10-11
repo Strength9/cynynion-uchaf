@@ -452,17 +452,35 @@ p {
    .main-navigation class: Navigation links wrapper */
 /* Mobile Version */
 .navigation-menu {
+  display: block;
   position: relative;
   border-bottom: 1px solid #e7e7e7;
   background-color: black;
+  overflow: hidden;
+  min-height: 100px;
   /* Mobile Version */
   /* Desktop Version */
 }
 .navigation-menu .main-navigation {
-  display: none;
   padding-left: 0px;
+  display: inline-block;
+}
+.navigation-menu .main-navigation div.logo {
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.navigation-menu .main-navigation div.logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  color: #FFF;
 }
 .navigation-menu .main-navigation li {
+  display: none;
   list-style-type: none;
   margin: 0px auto;
   text-align: center;
@@ -478,9 +496,19 @@ p {
   transition: 0.3s ease;
 }
 .navigation-menu .menuopen {
-  margin: 5px 30px 5px 5px;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  margin: 20px 10px 5px auto;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 35px;
   color: #FFF;
 }
 .navigation-menu .menuopen:hover {
@@ -496,20 +524,34 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: red;
+  background-color: blue;
   display: block;
   margin: 0;
+  padding: 100px 0 0;
 }
 .navigation-menu #menu-toggle:checked + .main-navigation label.menuclose {
-  text-align: right;
-  margin: 20px 20px 20px auto;
-  font-size: 40px;
-  display: block;
-  width: 40px;
-  color: black;
+  z-index: 2100;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  margin: 20px 10px 5px auto;
+  cursor: pointer;
+  font-size: 35px;
+  color: #FFF;
 }
 .navigation-menu #menu-toggle:checked + .main-navigation label.menuclose:hover {
   color: yellow;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation li {
+  display: block;
 }
 .navigation-menu #menu-toggle:checked + .main-navigation li a {
   color: #FFF;
@@ -517,8 +559,37 @@ p {
 .navigation-menu #menu-toggle:checked + .main-navigation li a:hover {
   color: yellow;
 }
+.navigation-menu #menu-toggle:checked + .main-navigation li > ul {
+  margin: 0px auto;
+  padding: 8px 0;
+  position: relative;
+  display: block;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation li > ul:before {
+  top: 0;
+  content: "";
+  border-top: 1px dashed rgba(255, 255, 255, 0.7);
+  width: 80px;
+  height: 1px;
+  display: block;
+  margin: 2px auto 5px;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation li > ul:after {
+  bottom: 0;
+  content: "";
+  border-top: 1px dashed rgba(255, 255, 255, 0.7);
+  width: 80px;
+  height: 1px;
+  display: block;
+  margin: 10px auto 2px;
+}
+.navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
 @media screen and (min-width: 505px) {
-  .navigation-menu .navigation-menu {
+  .navigation-menu {
     display: flex;
     align-items: center;
   }
@@ -539,7 +610,7 @@ p {
     display: none;
     position: absolute;
     top: 100%;
-    background-color: green;
+    background-color: orange;
     margin: 0;
     padding: 10px;
   }
@@ -555,7 +626,10 @@ p {
   .navigation-menu .main-navigation li ul li a {
     display: block;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 5px !important;
+  }
+  .navigation-menu .main-navigation li:hover ul {
+    display: block;
   }
   .navigation-menu label {
     display: none;
