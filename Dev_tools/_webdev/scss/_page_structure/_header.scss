@@ -1,13 +1,11 @@
-//header {position:relative;}
-
-/* .navigation-menu class: Navigation wrapper
-   .main-navigation class: Navigation links wrapper */
-
-/* Mobile Version */
-
+/* Desktop Version */
 $DeskNavLink : #FFF;
 $DeskNavLinkHover : yellow;
 $dropdownbackground : orange;
+
+/* Mobile Version */
+$mobilebreakpoint : 850px;
+$overlaynavcolor : blue;
 $MobileNavLink : #FFF;
 $MobileNavLinkHover : yellow;
 $MobileMenuOpen : #FFF;
@@ -15,21 +13,40 @@ $MobileMenuOpenHover : yellow;
 $MobileMenuClose : #FFF;
 $MobileMenuCloseHover : yellow;
 $innerULborder : rgba(255,255,255,0.7);
-$overlaynavcolor : blue;
+
+
+
+header {
+	position:fixed;
+	left:0;
+	right:0;
+	background-color:rgba(0,0,0,0.2);
+	border-bottom:2px solid #FFF;
+	-webkit-transition: background-color 2s ease-out;
+	-moz-transition: background-color 2s ease-out;
+	-o-transition: background-color 2s ease-out;
+	transition: background-color 2s ease-out;
+	
+	
+	&.fixed {
+		background-color:rgba(0,0,0,0.8);
+	}
+
+
+
 
 .navigation-menu {
 	display:block;
-  position: relative;
-  border-bottom: 1px solid #e7e7e7;
-  background-color:black;
-  overflow:hidden;
-  min-height:100px;
+  	position: relative;
+  	
+  	min-height:80px;
 
 /* Mobile Version */	
 	.main-navigation {
   		
   		padding-left: 0px;
 		display:inline-block;
+		
 		
 		div.logo {
 			
@@ -79,8 +96,8 @@ $overlaynavcolor : blue;
 		align-content: center;
 		align-items: center;
 		width:45px;
-		height:45px;
-  		margin: 20px 10px 5px auto;
+		height:60px;
+  		margin: 10px 10px 10px auto;
   		cursor: pointer;
   		font-size: 35px;
   		color: $MobileMenuOpen;
@@ -88,9 +105,8 @@ $overlaynavcolor : blue;
 		  		color:$MobileMenuOpenHover;
 	  		}
 	}
-	#menu-toggle {
-  	display: none;
-}
+	.menuclose {display:none;}
+	#menu-toggle { display: none; }
 	#menu-toggle:checked + .main-navigation {
 		position: fixed;
 		z-index:2000;
@@ -171,22 +187,25 @@ $overlaynavcolor : blue;
 	}
 	
 /* Desktop Version */
-	@media screen and (min-width: 505px) {
+	@media screen and (min-width: $mobilebreakpoint ) {
 
 		//height: 70px;
 		display: flex;
 		align-items: center;
+		
+		.menuopen {display:none; }
 
   		.main-navigation {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
-			margin: 0;
+			margin:auto 0 auto auto;
 			padding:0;
   		
 		
   			li {
 			  	position:relative;
+				  display:block;
 		  		a {
 					padding: 5px 8px;
   		  		}
@@ -227,4 +246,6 @@ $overlaynavcolor : blue;
 			display: none;
   		}
 	}
+}
+
 }

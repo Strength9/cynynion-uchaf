@@ -144,11 +144,11 @@ add_filter('image_size_names_choose', 'post_image_sizes');
 		
 		
 		
-		wp_enqueue_script( 'xray', get_template_directory_uri() . '/assets/js/modern.js','','',true);
+		wp_enqueue_script( 'xray-modern', get_template_directory_uri() . '/assets/js/modern.js','','',true);
 		wp_enqueue_script( 'jquery-core' );
 		
-		wp_enqueue_script( 'xray', get_template_directory_uri() . '/assets/js/script.js','','',true);
-		wp_enqueue_script( 'xray', get_template_directory_uri() . '/assets/js/slider.js','','',true);
+		wp_enqueue_script( 'xray-custom', get_template_directory_uri() . '/assets/js/script.js','','',true);
+		
 		
 
 
@@ -377,4 +377,6 @@ function wpf_limit_date_picker() {
 	<?php
 }
 add_action( 'wpforms_wp_footer_end', 'wpf_limit_date_picker', 10 );
+
+
 

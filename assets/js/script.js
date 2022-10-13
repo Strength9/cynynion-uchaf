@@ -1,11 +1,10 @@
-
-    
-    jQuery('#searchsite').on('click', function(e) {
-        jQuery("#searchholder").toggleClass("search-show"); //you can list several class names 
-        e.preventDefault();
-    });
-    
-    jQuery("#close-search-toggle").on('click', function(e) {
-        jQuery("#searchholder").toggleClass("search-show"); //you can list several class names 
-        e.preventDefault();
-    });
+jQuery(window).scroll(function () {
+    var scroll_top =     jQuery(this).scrollTop();
+    if (scroll_top >= 350) {
+        jQuery("header").addClass("fixed");
+        console.log('Fixed added');
+    } else {
+        jQuery("header").removeClass("fixed");
+        console.log('Fixed removed');
+    }
+});
