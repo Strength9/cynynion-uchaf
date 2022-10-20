@@ -1,0 +1,34 @@
+.pagehero {
+	width:100vw;
+	background-color:paleturquoise;
+	height:700px;
+	
+	position:relative;
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	img {
+		width:90%;
+		max-width:500px;
+	}
+	
+	.overlay {
+		background-color:rgba(0,0,0,0.2);
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		position:absolute;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+
+	} 
+	
+	
+	
+	
+}

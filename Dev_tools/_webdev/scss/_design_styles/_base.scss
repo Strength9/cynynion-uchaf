@@ -81,8 +81,8 @@ body {
     padding: 0 0 0;
     overflow-x: hidden; 
     color: $Basecolor;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
+    font-family: $basefont;
+    font-weight: 300;
     font-style: normal;
     font-size:15px;
     line-height:18px;
@@ -95,27 +95,32 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: clarendon-urw, serif;
+  font-family: $titlefonts;
   font-weight: 300;
+  margin:0;
 }
 h1 {
-  font-size: 50px;
-  margin-bottom: 30px;
   line-height: 1;
+  font-weight:900;
+  text-transform:uppercase;
+color:#000;
+letter-spacing:2.5px;
 
-  @media screen and (min-width: 768px) {
-    font-size: 65px;
-  }
-  
 }
+
 h2 {
-  font-size: 24px;
-  margin-bottom: 19px;
   line-height: 1;
-  @media(min-width: 360px) {
-    font-size: 22px;
-  }
+  font-weight:400;
+  font-style:normal;
+
 }
+
+h3 {
+  font-weight:100;
+  font-style:italic;
+  letter-spacing:2px;
+}
+
 p {
 
 font-size: 16px;

@@ -1,0 +1,42 @@
+.calltoaction {
+	
+	background-color:$blue;
+	padding:40px 30px !important;
+	
+	@media screen and (min-width: 700px ) {
+		padding:50px 50px !important;
+	}
+	@media screen and (min-width: 900px ) {
+		padding:60px 50px !important;
+	}
+	
+	
+	.wcp-columns {
+		 .wcp-column {
+		 		p {
+					 text-align:center;
+					 color:#FFF;
+					 margin:0;
+					 font-size:18px;
+					 @media screen and (min-width: 700px ) {
+						 font-size:22px;
+					 }
+					 @media screen and (min-width: 900px ) {
+						 font-size:25px;
+					 }
+					 
+					 	a {
+							 color:#FFF;
+							 text-decoration:none;
+							 
+							 &:hover {
+								 color: $lighterblue;
+							 }
+						 }
+				 }
+		 }
+	}
+	
+	
+}
+

@@ -1,11 +1,11 @@
 {
-    "key": "group_63468447d9765",
-    "title": "Hero Header",
+    "key": "group_6341500f17dc8",
+    "title": "Call to action",
     "fields": [
         {
-            "key": "field_6346844865c80",
-            "label": "Hero Size",
-            "name": "hero_size",
+            "key": "field_6341500f9038a",
+            "label": "Background Colour",
+            "name": "background_colour",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -17,10 +17,10 @@
                 "id": ""
             },
             "choices": {
-                "homepage": "Home Page",
-                "innerpage": "Inner Page"
+                "blue": "Blue",
+                "black": "Black"
             },
-            "default_value": "innerpage",
+            "default_value": false,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -29,11 +29,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_635121536ca93",
-            "label": "Background Image",
-            "name": "hero_background_image",
+            "key": "field_634150479038b",
+            "label": "Call to action text",
+            "name": "call_to_action_text",
             "aria-label": "",
-            "type": "image",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -42,16 +42,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "default_value": "",
+            "delay": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
         }
     ],
     "location": [
@@ -59,7 +54,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/block-hero"
+                "value": "acf\/block-call-to-action"
             }
         ]
     ],

@@ -1,11 +1,11 @@
 {
-    "key": "group_63468447d9765",
-    "title": "Hero Header",
+    "key": "group_63415383e99d3",
+    "title": "Image and Text",
     "fields": [
         {
-            "key": "field_6346844865c80",
-            "label": "Hero Size",
-            "name": "hero_size",
+            "key": "field_63415384cc960",
+            "label": "Position",
+            "name": "position",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -17,10 +17,10 @@
                 "id": ""
             },
             "choices": {
-                "homepage": "Home Page",
-                "innerpage": "Inner Page"
+                "left": "Text Left",
+                "right": "Text Right"
             },
-            "default_value": "innerpage",
+            "default_value": false,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -29,9 +29,29 @@
             "placeholder": ""
         },
         {
-            "key": "field_635121536ca93",
-            "label": "Background Image",
-            "name": "hero_background_image",
+            "key": "field_634153c4cc961",
+            "label": "Content Text",
+            "name": "contenttext",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "delay": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_634153dccc962",
+            "label": "Image Field",
+            "name": "imagefield",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -42,7 +62,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "array",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -59,7 +79,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/block-hero"
+                "value": "acf\/block-image-and-text"
             }
         ]
     ],

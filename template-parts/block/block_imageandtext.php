@@ -17,26 +17,30 @@ include('______partials_global.php');
 
 /* --------------------------------------------------------------------------- */
 
-$position = ! empty( get_field('textposition') ) ? get_field('textposition') : 'left'; // left / right
-$contenttext = ! empty( get_field('contenttext') ) ? get_field('contenttext') : '';
+$position = ! empty( get_field('position') ) ? get_field('position') : 'left'; // left / right
+$contenttext = ! empty( get_field('contenttext') ) ? '<div class="wcp-column textside '.$position.'"><div class="content">'.get_field('contenttext').'</div></div>' : '<div class="wcp-column textside"></div>';
 
 if( !empty($imagefield = get_field('imagefield')) ) {
 	
 	$imageurl=$imagealt=$imageclass = '';
 	$imageurl = ! empty($imagefield['url'] ) ? $imagefield['url'] : get_field('default_holding_image','options');
-	$imagealt = ! empty( $imagefield['alt'] ) ? ' alt="'.$imagefield['alt'].'"' : '';
-	$imagedata .= '<img src="'.$imageurl.'" '.$imagealt.'?>';
+	$imagedata .= '<div class="wcp-column imageside" style="background-image:url('.$imageurl.');">'.$position.'</div>' ;
 
 } else  { 
-	$imagedata .= '';
+	$imagedata .= '<div class="wcp-column imageside"></div>';
 
 };
+
+if ($position === 'left') {
+	$output = $contenttext.$imagedata ;
+} else {
+	$output = $imagedata.$contenttext ;
+}
 
 
 echo '<section '.$anchor.' class="'.$blockclass .'">
 	<div class="wcp-columns">
-	 	<div class="wcp-column">'.$contenttext.'</div>
-		 <div class="wcp-column">'.$position.$imagedata .'</div>
+	 	'.$output.'
 	</div>
 </section>';
 ?>

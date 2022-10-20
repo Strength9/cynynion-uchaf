@@ -38,7 +38,7 @@ if( get_field('image_grid') ):
 		} else  { 
 			$imagedata .= '';
 		
-		};
+		}; 
 		
 	endwhile; 
 	$imagedata .= '</div>';
@@ -49,7 +49,7 @@ echo '<section '.$anchor.' class="'.$blockclass .'">
 	<div class="imagetextandgrid">
 	 	<div class="introduction">'.$section_title.$strap_line.'</div>
 		 <div class="imagedata">'.$imagedata.'</div>
-	 	<div class="contenttext">'.$content.'</div>
+	 	<div class="contenttext"><div class="content">'.$content.'</div></div>
 	</div>
 </section>';
 ?>

@@ -377,9 +377,9 @@ body {
   margin: 0;
   padding: 0 0 0;
   overflow-x: hidden;
-  color: rgb(68, 68, 68);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 200;
+  color: #5c5e62;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   font-style: normal;
   font-size: 15px;
   line-height: 18px;
@@ -391,30 +391,29 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: clarendon-urw, serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
+  margin: 0;
 }
 
 h1 {
-  font-size: 50px;
-  margin-bottom: 30px;
   line-height: 1;
-}
-@media screen and (min-width: 768px) {
-  h1 {
-    font-size: 65px;
-  }
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 2.5px;
 }
 
 h2 {
-  font-size: 24px;
-  margin-bottom: 19px;
   line-height: 1;
+  font-weight: 400;
+  font-style: normal;
 }
-@media (min-width: 360px) {
-  h2 {
-    font-size: 22px;
-  }
+
+h3 {
+  font-weight: 100;
+  font-style: italic;
+  letter-spacing: 2px;
 }
 
 p {
@@ -451,6 +450,7 @@ p {
 /* Desktop Version */
 /* Mobile Version */
 header {
+  z-index: 1000;
   position: fixed;
   left: 0;
   right: 0;
@@ -653,6 +653,20 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
   }
 }
 
+section {
+  padding: 60px 30px;
+}
+@media screen and (min-width: 700px) {
+  section {
+    padding: 80px 50px;
+  }
+}
+@media screen and (min-width: 900px) {
+  section {
+    padding: 120px 50px;
+  }
+}
+
 .ps_left {
   text-align: left;
 }
@@ -787,10 +801,15 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
 }
 @media only screen and (min-width: 800px) {
   .imagegridtextblock .imagetextandgrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 340px 1fr;
     grid-template-rows: minmax(0, auto) minmax(0, 1fr);
-    gap: 0px 0px;
+    gap: 0px 40px;
     grid-template-areas: "introduction introduction" "imagedata contenttext";
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .imagegridtextblock .imagetextandgrid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 .imagegridtextblock .imagetextandgrid .introduction {
@@ -806,10 +825,43 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
 .imagegridtextblock .imagetextandgrid .introduction h1 {
   margin: 0 auto;
   text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 400px) {
+  .imagegridtextblock .imagetextandgrid .introduction h1 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .imagegridtextblock .imagetextandgrid .introduction h1 {
+    font-size: 40px;
+    margin-bottom: 45px;
+  }
 }
 .imagegridtextblock .imagetextandgrid .introduction h3 {
-  margin: 0 auto;
+  margin: 0px auto;
   text-align: center;
+  font-size: 25px;
+}
+.imagegridtextblock .imagetextandgrid .introduction h3:after {
+  content: "";
+  width: 40%;
+  height: 8px;
+  background-color: #e2e2e2;
+  margin: 40px auto 60px;
+  display: block;
+}
+@media screen and (min-width: 400px) {
+  .imagegridtextblock .imagetextandgrid .introduction h3:after {
+    margin-top: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .imagegridtextblock .imagetextandgrid .introduction h3:after {
+    margin-top: 45px;
+  }
 }
 .imagegridtextblock .imagetextandgrid .imagedata {
   grid-area: imagedata;
@@ -822,18 +874,18 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
 }
 .imagegridtextblock .imagetextandgrid .imagedata .image_grid {
   width: 90%;
-  margin: auto;
+  max-width: 360px;
+  margin: 0 auto 45px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 0px 10px;
+  gap: 10px 10px;
   grid-template-areas: ". . .";
   max-width: 600px;
 }
 @media only screen and (max-width: 800px) {
   .imagegridtextblock .imagetextandgrid .imagedata .image_grid {
-    max-width: 320px;
-    background-color: pink;
+    max-width: 360px;
   }
   .imagegridtextblock .imagetextandgrid .imagedata .image_grid img:nth-child(4), .imagegridtextblock .imagetextandgrid .imagedata .image_grid img:nth-child(5), .imagegridtextblock .imagetextandgrid .imagedata .image_grid img:nth-child(6), .imagegridtextblock .imagetextandgrid .imagedata .image_grid img:nth-child(7), .imagegridtextblock .imagetextandgrid .imagedata .image_grid img:nth-child(8), .imagegridtextblock .imagetextandgrid .imagedata .image_grid img:nth-child(9) {
     display: none;
@@ -841,16 +893,172 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
 }
 @media only screen and (min-width: 800px) {
   .imagegridtextblock .imagetextandgrid .imagedata .image_grid {
-    max-width: 430px;
+    margin: 0 auto 0;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
+    gap: 10px 10px;
     grid-template-areas: ". . ." ". . ." ". . .";
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .imagegridtextblock .imagetextandgrid .imagedata .image_grid {
+    width: 360px;
   }
 }
 .imagegridtextblock .imagetextandgrid .contenttext {
   grid-area: contenttext;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.imagegridtextblock .imagetextandgrid .contenttext .content h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 25px;
+  color: #000;
+  text-align: center;
+}
+.imagegridtextblock .imagetextandgrid .contenttext .content p {
+  text-align: center;
+}
+.imagegridtextblock .imagetextandgrid .contenttext .content p:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 800px) {
+  .imagegridtextblock .imagetextandgrid .contenttext .content h2 {
+    text-align: left;
+  }
+  .imagegridtextblock .imagetextandgrid .contenttext .content p {
+    text-align: left;
+  }
+}
+
+.calltoaction {
+  background-color: #2f4377;
+  padding: 40px 30px !important;
+}
+@media screen and (min-width: 700px) {
+  .calltoaction {
+    padding: 50px 50px !important;
+  }
+}
+@media screen and (min-width: 900px) {
+  .calltoaction {
+    padding: 60px 50px !important;
+  }
+}
+.calltoaction .wcp-columns .wcp-column p {
+  text-align: center;
+  color: #FFF;
+  margin: 0;
+  font-size: 18px;
+}
+@media screen and (min-width: 700px) {
+  .calltoaction .wcp-columns .wcp-column p {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .calltoaction .wcp-columns .wcp-column p {
+    font-size: 25px;
+  }
+}
+.calltoaction .wcp-columns .wcp-column p a {
+  color: #FFF;
+  text-decoration: none;
+}
+.calltoaction .wcp-columns .wcp-column p a:hover {
+  color: #9cb6f9;
+}
+
+.imageandtext {
+  padding: 0 !important;
+}
+.imageandtext .wcp-columns {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  background-color: orange;
+  grid-gap: 0 0;
+}
+.imageandtext .wcp-columns .wcp-column.imageside {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.imageandtext .wcp-columns .wcp-column.textside {
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: flex-start;
+}
+.imageandtext .wcp-columns .wcp-column.textside.left {
+  justify-content: center;
+  align-content: space-between;
+  align-items: flex-end;
+}
+.imageandtext .wcp-columns .wcp-column.textside .content {
+  width: 90%;
+  max-width: 90%;
+  padding: 50px;
+}
+.imageandtext .wcp-columns .wcp-column.textside .content h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 25px;
+  color: #000;
+  text-align: center;
+}
+.imageandtext .wcp-columns .wcp-column.textside .content p {
+  text-align: center;
+}
+.imageandtext .wcp-columns .wcp-column.textside .content p:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 800px) {
+  .imageandtext .wcp-columns .wcp-column.textside .content h2 {
+    text-align: left;
+  }
+  .imageandtext .wcp-columns .wcp-column.textside .content p {
+    text-align: left;
+  }
+}
+
+.pagehero {
+  width: 100vw;
+  background-color: paleturquoise;
+  height: 700px;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.pagehero img {
+  width: 90%;
+  max-width: 500px;
+}
+.pagehero .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 #wpforms-37 {

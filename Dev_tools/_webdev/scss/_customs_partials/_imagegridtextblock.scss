@@ -1,13 +1,6 @@
 .imagegridtextblock {
 	
-	
-	
-	
-	
-	
-	.contenttext {
-		
-	}
+
 	
 	.imagetextandgrid {
 		margin:auto;
@@ -21,12 +14,15 @@
 			"introduction" "imagedata" "contenttext"; 
 			
 			@media only screen and (min-width:800px) {
-				grid-template-columns: 1fr 1fr; 
+				grid-template-columns: 340px 1fr; 
 				  grid-template-rows: minmax(0,auto) minmax(0,1fr); 
-				  gap: 0px 0px; 
+				  gap: 0px 40px; 
 				  grid-template-areas: 
 					"introduction introduction"
 					"imagedata contenttext"; 
+			}
+			@media only screen and (min-width:1100px) {
+				grid-template-columns: 1fr 1fr; 
 			}
 	
 		.introduction { 
@@ -42,10 +38,39 @@
 			h1 {
 				margin:0 auto;
 				text-align:center;
+				font-size:24px;
+				margin-bottom:25px;
+				
+				@media screen and (min-width: 400px ) {
+					font-size:28px;
+					margin-bottom:35px;
+				}
+				@media screen and (min-width: 600px ) {
+					font-size:40px;
+					margin-bottom:45px;
+				}
+				
 			}
 			h3 {
-				margin:0 auto;
+				margin:0px auto;
 				text-align:center;
+				font-size:25px;
+				
+				&:after {
+					content:"";
+					width:40%;
+					height:8px;
+					background-color:#e2e2e2;
+					margin:40px auto 60px;
+					display:block;
+					
+					@media screen and (min-width: 400px ) {
+						margin-top:35px;
+					}
+					@media screen and (min-width: 600px ) {
+						margin-top:45px;
+					}
+				}
 			}
 		}
 		.imagedata { 
@@ -60,40 +85,75 @@
 			
 			.image_grid{
 				width:90%;
-				margin:auto;
-			  display: grid; 
-			  grid-template-columns: 1fr 1fr 1fr; 
-			  grid-template-rows: 1fr; 
-			  gap: 0px 10px; 
-			  grid-template-areas:  ". . ." ;
-			  max-width:600px;
+				max-width:360px;
+				margin:0 auto 45px;
+			  	display: grid; 
+			  	grid-template-columns: 1fr 1fr 1fr; 
+			  	grid-template-rows: 1fr; 
+			  	gap: 10px 10px; 
+			  	grid-template-areas:  ". . ." ;
+			  	max-width:600px;
 			  
 			  @media only screen and (max-width:800px) {
-				  max-width:320px;
-				  background-color:pink;
-			  img {
-				  &:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9) {
-					  display:none;
-				  }
+				  max-width:360px;
+			  		img {
+				  		&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9) {
+					  		display:none;
+				  		}
 			  }
 			  
 		  }
 				
 				@media only screen and (min-width:800px) {
-					max-width:430px;
+					margin:0 auto 0;
 					grid-template-columns: 1fr 1fr 1fr; 
 					  grid-template-rows: 1fr 1fr 1fr; 
-					  gap: 0px 0px; 
+					  gap: 10px 10px; 
 					  grid-template-areas: 
 						". . ."
 						". . ."
 						". . ."; 
 				}
+
+				@media only screen and (min-width:1100px) {
+					width:360px; 
+				}
 			}
 		}
 		.contenttext { 
 			grid-area: contenttext;
-			background-color:red;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content:  center;
+			align-content: flex-start;
+			align-items: flex-start;
+			
+			.content {
+				h2 {
+					font-family:$basefont;
+					font-weight:400;
+					display:block;
+					margin-bottom:25px;
+					color:#000;
+					text-align:center;
+				}
+				p {
+					text-align:center;
+					&:last-child {
+						margin-bottom:0;
+					}
+				}
+				
+				@media only screen and (min-width:800px) {
+					h2 {
+						text-align:left;
+					}
+					p {
+						text-align:left;
+					}
+				}
+			}
 		 }
 	}
 	
