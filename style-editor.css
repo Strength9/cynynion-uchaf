@@ -1017,12 +1017,23 @@ section {
   background-color: orange;
   grid-gap: 0 0;
 }
+@media screen and (max-width: 800px) {
+  .imageandtext .wcp-columns {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(10px, auto) minmax(10px, auto);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "textside" "imageside";
+  }
+}
 .imageandtext .wcp-columns .wcp-column.imageside {
+  grid-area: imageside;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .imageandtext .wcp-columns .wcp-column.textside {
+  grid-area: textside;
   background-color: yellow;
   display: flex;
   flex-direction: column;
@@ -1062,6 +1073,15 @@ section {
   .imageandtext .wcp-columns .wcp-column.textside .content p {
     text-align: left;
   }
+}
+
+.wcp-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "textside imageside";
 }
 
 .pagehero {
