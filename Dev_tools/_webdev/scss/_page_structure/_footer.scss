@@ -1,1 +1,264 @@
+.quotations {
+background-color:#000;
+text-align:center;
+background-image:url("/wp-content/themes/cynynion-uchaf/assets/img/footerbench.webp");
+background-size:cover;
+background-repeat:no-repeat;
+background-position:center center;
+position:relative;
+min-height:400px;
+@keyframes slidy {
 
+	0% {left:0%; opacity:1;}
+	32.9% {left:0%; opacity:0; }
+	
+	33% {left:-100%; opacity:0;}
+	49.5% {left:-100%; opacity:1;}
+	59.9% {left:-100%; opacity:0;}
+	
+	66% {left:-200%; opacity:0;}
+	82.5% {left:-200%; opacity:1;}
+	100% {left:-200%; opacity:0;}
+
+}
+
+
+	.overlay {
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		background-color:rgba(0,0,0,0.6);
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-content: stretch;
+		align-items: center;
+		
+		>div {
+		order: 0;
+		flex: 0 1 auto;
+		align-self: auto;
+		margin:0 auto; 
+		width:90%;
+		max-width:750px;
+		
+		
+		.slider {
+			margin:auto;
+			width:100%; 
+			overflow:hidden; 
+			width:100%; 
+			
+			.slidertext {
+				position:relative; 
+				width:500%; 
+				margin:0; 
+				padding:0; 
+				text-align:left; 
+				animation:20s slidy ease-in infinite ;
+				
+				.slide {
+					position:relative; 
+					z-index:1; 
+					width:20%; 
+					height:auto; 
+					float:left;
+					color:#FFF;
+					text-align: center;
+					letter-spacing: 1.2px;
+					
+				
+					span {
+						display:block; 
+						color:#FFF;
+						margin:10px auto 0px;
+						
+						&:first-child {
+							font-weight:400;
+						}
+					}
+	
+				}
+			}
+			
+		}
+		
+		
+
+	}	
+	
+	}
+
+
+}
+
+footer {
+	background-image:url("/wp-content/themes/cynynion-uchaf/assets/img/footerpattern.webp");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+	padding:50px 20px;
+	
+	.wcp-columns {
+		margin:40px auto;
+		display: grid; 
+		grid-template-columns: 1fr; 
+		grid-auto-rows: auto;
+		gap: 50px 50px; 
+		
+		.wcp-column.full {
+			grid-column: 1 /  span 1;
+		}
+		
+		
+		ul {
+			margin:0;
+			padding:0;
+			
+			li {
+				list-style:none;
+				color:#FFF;
+				line-height:1.4;
+				margin:0 0 10px;
+				font-size:16px;
+				
+				a {
+					color:#FFF;
+					text-decoration:none;
+				}
+				
+				&.title {
+					font-weight:600;
+					font-size:18px;
+					margin-bottom:30px;
+				}
+				
+				&.email {
+					&:before {
+						content: "\f0e0";
+						font-family: "Font Awesome 6 Pro";
+						margin:0 5px 0 -15px;
+						color: #FFF;
+						font-size:18px;
+					}
+				}
+				&.phone {
+					&:before {
+						content: "\f095";
+						font-family: "Font Awesome 6 Pro";
+						margin:0 5px 0 -15px;
+						color: #FFF;
+						font-size:18px;
+					}
+				}
+				&.address {
+					&:before {
+						content: "\f015";
+						font-family: "Font Awesome 6 Pro";
+						margin:0 5px 0 -15px;
+						color: #FFF;
+						font-size:18px;
+					}
+				}
+				
+			}
+		}
+		
+		@media screen and (min-width: 450px ) {
+			grid-template-columns: 1fr 1fr; 
+			.wcp-column.full {
+				grid-column: 1 /  span 2;
+			}
+		}
+		@media screen and (min-width: 1040px ) {
+			grid-template-columns: 1fr 1fr 1fr 1fr; 
+			gap: 30px 30px; 
+			.wcp-column.full {
+				grid-column: 1 /  span 4;
+			}
+		}
+
+	}
+	
+	
+	
+	
+}
+
+.copyrightbar {
+	background-color:#252525;
+	min-height:35px;
+	padding:20px 20px;
+	
+	.wcp-columns { 
+		grid-template-areas:  "payment" "copy"; 
+	
+	
+	
+	
+		.copy {
+			grid-area: copy;
+			font-size:14px;
+			
+			text-align:left;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center !important;
+			text-align:left;
+			width:100%;
+			.copycontent {
+				text-align:center;
+				//line-height:35px;
+				color:#FFF;
+				a {color:#FFF;
+					text-decoration:none;
+					font-weight:400;
+				}		}
+		}
+		.payment {
+			grid-area: payment;
+			ul {
+				padding:0;
+				margin:auto auto;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: flex-end;
+			align-content: stretch;
+			align-items: center;
+			
+			li {
+				list-style:none;
+				padding:0;
+				margin:0px 10px 0px;
+			}
+			}
+		}
+		
+		
+		@media screen and (min-width: 800px ) {
+			grid-template-areas:  "copy payment"; 
+		
+		.copy {
+			justify-content: flex-start;
+			align-content: flex-start;
+			align-items: flex-start!important;
+		}
+		.payment {
+			justify-content: flex-end;
+			align-content: flex-end;
+			align-items: flex-end!important;
+			ul {
+				margin: auto 0 auto auto;
+			}
+		}
+		}
+	}
+	
+}

@@ -17,8 +17,39 @@ include('______partials_global.php');
 
 /* --------------------------------------------------------------------------- */
 
-$position = ! empty( get_field('position') ) ? get_field('position') : 'left'; // left / right
-$contenttext = ! empty( get_field('contenttext') ) ? '<div class="wcp-column textside '.$position.'"><div class="content">'.get_field('contenttext').'</div></div>' : '<div class="wcp-column textside"></div>';
+$position = ! empty( get_field('position') ) ? get_field('position') : 'left'; 
+
+
+
+if ( get_field('show_property_features') ): 
+	$sub_field_1 = '';
+	
+	if ( get_field('show_only_front_features') ):   // just selected options
+	
+			if( have_rows('property_features','options') ):
+				while( have_rows('property_features','options') ): the_row();
+						if ( get_sub_field('show_on_front_page') ):
+						$sub_field_1 .= '<li>'.get_sub_field('feature').'</li>';
+						endif; 
+				endwhile;
+			endif; 
+	else: // All Features
+		if( have_rows('property_features','options') ):
+			while( have_rows('property_features','options') ): the_row();
+				
+					$sub_field_1 .= '<li>'.get_sub_field('feature').'</li>';
+			endwhile;
+		endif; 
+	endif;	
+	
+	$list = '<ul class="features">'.$sub_field_1.'</ul>';
+else:
+	$list='';
+endif;
+
+
+
+$contenttext = ! empty( get_field('contenttext') ) ? '<div class="wcp-column textside '.$position.'"><div class="content '.$position.'">'.get_field('contenttext').$list.'</div></div>' : '<div class="wcp-column textside"></div>';
 
 if( !empty($imagefield = get_field('imagefield')) ) {
 	
@@ -38,9 +69,11 @@ if ($position === 'left') {
 }
 
 
+
+
 echo '<section '.$anchor.' class="'.$blockclass .'">
-	<div class="wcp-columns">
+	<div class="wcp-columns '.$position.'">
 	 	'.$output.'
 	</div>
-</section>';
+</section>'; 
 ?>

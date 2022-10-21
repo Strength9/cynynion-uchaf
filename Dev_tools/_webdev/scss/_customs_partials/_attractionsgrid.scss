@@ -1,0 +1,74 @@
+.localattractionsgrid {
+	
+
+	h2 {
+		font-weight:900;
+	 	text-transform:uppercase;
+	 	color:#000;
+	 	letter-spacing:2.5px;
+	 	font-style:normal;
+	 	margin:25px 0 45px;
+	}
+	p {
+		text-align:center;
+	}
+	
+	
+	
+	.attractionslink {
+		margin:40px auto;
+		display: grid; 
+		grid-template-columns: 1fr; 
+		grid-auto-rows: auto;
+		gap: 50px 50px; 
+		
+		
+		@media screen and (min-width: 450px ) {
+			grid-template-columns: 1fr 1fr; 
+			
+		}
+		
+		@media screen and (min-width: 1040px ) {
+			grid-template-columns: 1fr 1fr 1fr; 
+			gap: 30px 30px; 
+		}
+		@media screen and (min-width: 1200px ) {
+			margin:70px auto;
+			gap: 50px 50px; 
+		}
+		
+		article {
+			.locationthumbnail {
+				background-position:center center;
+				background-repeat: no-repeat;
+				background-size:cover;
+				height:190px;
+				
+			}
+			.locationtitle {
+				h3 {
+					font-weight:900;
+				 	text-transform:uppercase;
+				 	color:#000;
+				 	letter-spacing:2.5px;
+				 	font-style:normal;
+				 	margin:25px 0;
+				}
+			}
+			
+			a {
+				color:$blue;
+				text-decoration:none;
+				
+				&:hover {
+					color:$lighterblue;
+				}
+			}
+			
+			p {
+				text-align:left;
+			}
+			
+		}
+	}
+}

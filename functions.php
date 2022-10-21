@@ -174,6 +174,14 @@ if( function_exists('acf_add_options_page') ) {
 			'position'      => 1,
 			'redirect'		=> false
 		));	
+		acf_add_options_page(array(
+			'page_title' 	=> 'Property Settings',
+			'menu_title'	=> 'Property Settings',
+			'menu_slug' 	=> 'property-includes',
+			'capability'	=> 'edit_posts',
+			'position'      => 1,
+			'redirect'		=> false
+		));	
 };
 
 

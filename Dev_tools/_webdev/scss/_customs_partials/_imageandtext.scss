@@ -4,19 +4,34 @@
 	.wcp-columns {
 		margin:0;
 		padding:0;
-		width:100% !important;
-		max-width:100%  !important;
-		background-color:orange;
 		grid-gap: 0 0;
+		width:100%;
 		
 		@media screen and (max-width: 800px ) {
+			margin:auto;
 			grid-template-columns: 1fr;
-			grid-template-rows: minmax(10px, auto) minmax(10px, auto);
+			grid-template-rows: minmax(400px, auto) minmax(400px, auto);
 			gap: 0px 0px;
 			grid-auto-flow: row;
 			grid-template-areas: "textside" "imageside";
 		}
-		
+		@media screen and (min-width: 800px ) {
+			width:100% !important;
+			max-width:100%  !important;
+			margin:auto;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: minmax(400px, auto);
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas: "textside imageside";
+			
+			&.right {
+				grid-template-areas: "imageside textside" !important;
+			}
+		}
+		@media screen and (min-width: 1000px ) {
+			grid-template-rows: minmax(500px, auto);
+		}
 		
 		.wcp-column {
 		 
@@ -28,7 +43,6 @@
 			 }
 		 	&.textside {
 				 grid-area: textside;
-				 background-color:yellow;
 				 display: flex;
 				 flex-direction: column;
 				 flex-wrap: nowrap;
@@ -36,24 +50,26 @@
 				 align-content: space-between;
 				 align-items: flex-start;
 				 
-				 &.left {
-					 justify-content: center;
-					  align-content: space-between;
-					  align-items: flex-end;
-				 }
+			
 				 
 				 .content {
+					 margin:0 auto;
 					 width:90%;
 					 max-width:90%;
 					 padding:50px;
 					 
 					 h2 {
-						 font-family:$basefont;
-						 font-weight:400;
+						 
 						 display:block;
 						 margin-bottom:25px;
-						 color:#000;
+						
 						 text-align:center;
+						 
+						 font-weight:900;
+						 text-transform:uppercase;
+						 color:#000;
+						 letter-spacing:2.5px;
+
 					 }
 					 p {
 						 text-align:center;
@@ -63,13 +79,24 @@
 					 }
 					 
 					 @media only screen and (min-width:800px) {
-						 h2 {
-							 text-align:left;
-						 }
-						 p {
-							 text-align:left;
-						 }
-					 }
+						 
+						 max-width:900px;
+						  h2 {
+							  text-align:left;
+						  }
+						  p {
+							  text-align:left;
+						  }
+						  
+						  &.left {
+							  h2 {
+									//text-align:right;
+								}
+								p {
+								//	text-align:right;
+								}
+						  }
+					  }
 				 }
 			 }
 		 }
@@ -79,12 +106,23 @@
 }
 
 
-
-.wcp-column {  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-	"textside imageside";
+ul.features {
+	margin-left:0;
+	padding-left:20px !important;
+	-moz-column-count: 1 !important;
+	-moz-column-gap: 20px !important;
+	-webkit-column-count: 1 !important;
+	-webkit-column-gap: 20px !important;
+	column-count: 1 !important;
+	column-gap: 20px  !important;
+	
+	@media screen and (min-width: 1100px ) {
+		-moz-column-count: 2 !important;
+		-moz-column-gap: 20px !important;
+		-webkit-column-count: 2 !important;
+		-webkit-column-gap: 20px !important;
+		column-count: 2 !important;
+		column-gap: 20px !important;
+	}
+	
 }
