@@ -5,6 +5,16 @@ $email_address = ! empty( get_field('email_address','options') ) ? '<li class="e
 $telephone_number = ! empty( get_field('telephone_number','options') ) ? '<li class="phone"><a href="tel:'.get_field('telephone_number','options').'" title="call the team">'.get_field('telephone_number','options').'</a></li>' : '';
 $address = ! empty( get_field('address','options') ) ? '<li class="address">'.get_field('address','options').'</li>' : '';
 
+
+
+
+$facebook = ! empty( get_field('facebook','options') ) ? '<li><a href="'.get_field('facebook','options').'" title="Find us on Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>' : '';
+$instagram = ! empty( get_field('instagram','options') ) ? '<li><a href="'.get_field('instagram','options').'" title="Meet us on Instagram"><i class="fa-brands fa-instagram"></i></a></li>' : '';
+$linkedin = ! empty( get_field('linkedin','options') ) ? '<li><a href="'.get_field('linkedin','options').'" title="Connect on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>' : '';
+$tiktok = ! empty( get_field('tiktok','options') ) ? '<li><a href="'.get_field('tiktok','options').'" title="Watch us on Tik tok"><i class="fa-brands fa-tiktok"></i></a></li>' : '';
+
+
+
 ?>
 <section class="quotations">
 	
@@ -13,23 +23,22 @@ $address = ! empty( get_field('address','options') ) ? '<li class="address">'.ge
 			<div class="slider">
 				<div class="slidertext">
 					<div class="slide">
+						<div><span>D - October 2022</span></div>
 						Had a lovely stay in this traditional old farmhouse. Perfect for a get together with our growing family. Very comfortable home in a stunning location.
-						<span class="by">D</span>
-						<span class="date">October 2022</span>
+						
 					</div>
 					<div class="slide">
+						<div><span>Paul - July 2022</span></div>
 						Stayed here September 2022. A great place to stay, accommodation and facilities all excellent. Some good places to visit nearby. Thank you.
-						<span class="by">Paul</span>
-						<span class="date">July 2022</span>
+			
 						
 		
 					</div>
 					<div class="slide">
-						We had a wonderful stay in this lovely Farmhouse which is extremely well hosted by Samantha.
-						It was out first AirB&B booking and we couldn’t of asked for more.
+						<div><span>Mark - September 2022</span></div>
+						We had a wonderful stay in this lovely Farmhouse which is extremely well hosted by Samantha. It was out first AirB&B booking and we couldn’t of asked for more.
 						We hope to be back soon.
-						<span class="by">Mark</span>
-						<span class="date">September 2022</span>
+						
 					</div>
 				</div>
 			</div>
@@ -38,7 +47,7 @@ $address = ! empty( get_field('address','options') ) ? '<li class="address">'.ge
 </section>
 <footer>
 	<div class="wcp-columns">
-		 <div class="wcp-column full">Sign Up</div>
+		 <div class="wcp-column full"><?php echo do_shortcode('[wpforms id="160"]');?></div>
 		 <div class="wcp-column">
 			 <ul class="contacts">
 				 <li class="title">Contact Us</li>
@@ -47,32 +56,16 @@ $address = ! empty( get_field('address','options') ) ? '<li class="address">'.ge
 				<?php echo $address;?>
 			 </ul>
 		 </div>
-		 <div class="wcp-column">
-			 <ul class="contacts">
-				  <li class="title">Contact Us</li>
-				 <li><a href="#">Contact Us</a></li>
-				 <li><a href="#">Contact Us</a></li>
-				 <li><a href="#">Contact Us</a></li>
-				 <li><a href="#">Contact Us</a></li>
-			  </ul>
+		 <div class="wcp-column hidesmall">
+			 <?php wp_nav_menu( array(  'menu' => 'MainMenu','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<ul class="nm"><li class="title">Find Out More</li>%3$s</ul>' ) );?>  
 		 </div>
-		 <div class="wcp-column">
-			 <ul class="contacts">
-				 <li class="title">Contact Us</li>
-				  <li><a href="#">Contact Us</a></li>
-				  <li><a href="#">Contact Us</a></li>
-				  <li><a href="#">Contact Us</a></li>
-				  <li><a href="#">Contact Us</a></li>
-			  </ul>
+		 <div class="wcp-column hidemedium">
+	 		<?php wp_nav_menu( array(  'menu' => 'MainMenu','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<ul class="nm"><li class="title">Legal Menu</li>%3$s</ul>' ) );?>  
 		 </div>
-		 <div class="wcp-column">
-			 <ul class="contacts">
-				<li class="title">Contact Us</li>
-				 <li><a href="#">Contact Us</a></li>
-				 <li><a href="#">Contact Us</a></li>
-				 <li><a href="#">Contact Us</a></li>
-				 <li><a href="#">Contact Us</a></li>
-			  </ul>
+		 <div class="wcp-column full">
+			<ul class="socialmedia">
+				 <?php echo $facebook.$instagram.$linkedin.$tiktok; ?>
+			 </ul>
 		 </div>
 	</div>
 	

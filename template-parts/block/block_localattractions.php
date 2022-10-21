@@ -18,6 +18,8 @@ include('______partials_global.php');
 /* --------------------------------------------------------------------------- */
 
 
+$area_title = ! empty( get_field('area_title') ) ? '<h2>'.get_field('area_title').'</h2>' : '';
+$area_content = ! empty( get_field('area_content') ) ? get_field('area_content') : '';
 
 $select_number_to_show = ! empty( get_field('select_number_to_show') ) ? get_field('select_number_to_show') : 3;
 
@@ -38,7 +40,7 @@ $post_id = get_the_ID();
 	$thumbnail_url = get_the_post_thumbnail_url();
 	$extract =  ! empty( get_field('attraction_introduction',$post_id) ) ? get_field('attraction_introduction',$post_id) : ''; 
 	$gridoutput .= '<article>
-				<div class="locationthumbnail" style="background-image:url('.$thumbnail_url.');">Thumb</div>
+				<div class="locationthumbnail" style="background-image:url('.$thumbnail_url.');"></div>
 				<div class="locationtitle"><h3>'.get_the_title().'</h3></div>
 				<div class="locationextract">'.$extract.'</div>
 				<a href="'.get_permalink($post_id).'">Read More</a>
@@ -51,9 +53,8 @@ wp_reset_postdata();
 
 echo '<section '.$anchor.' class="'.$blockclass .'">
 	<div class="wcp-columns">
-	 	<div class="wcp-column full">
-		 <h2>Putting you at the heart of the Adventure</h2>
-		 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum nec quam eu tincidunt. Etiam rutrum magna justo, ut viverra ipsum porta et. In leo velit, efficitur id arcu sed, tincidunt pretium justo. </p>
+	 	<div class="wcp-column full">'.$area_title.$area_content.'
+		 
 		 
 		 <div class="attractionslink">
 		 '.$gridoutput.'

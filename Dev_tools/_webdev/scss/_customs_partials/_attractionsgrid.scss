@@ -12,7 +12,27 @@
 	p {
 		text-align:center;
 	}
-	
+	h3 {
+		margin:0px auto;
+		text-align:center;
+		font-size:25px;
+		
+		&:after {
+			content:"";
+			width:40%;
+			height:8px;
+			background-color:#e2e2e2;
+			margin:40px auto 60px;
+			display:block;
+			
+			@media screen and (min-width: 400px ) {
+				margin-top:35px;
+			}
+			@media screen and (min-width: 600px ) {
+				margin-top:45px;
+			}
+		}
+	}
 	
 	
 	.attractionslink {
@@ -42,7 +62,7 @@
 				background-position:center center;
 				background-repeat: no-repeat;
 				background-size:cover;
-				height:190px;
+				height:210px;
 				
 			}
 			.locationtitle {
@@ -53,6 +73,10 @@
 				 	letter-spacing:2.5px;
 				 	font-style:normal;
 				 	margin:25px 0;
+					 text-align: left;
+					 &:after {
+						 display:none;
+					 }
 				}
 			}
 			

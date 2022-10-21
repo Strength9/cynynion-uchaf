@@ -55,7 +55,7 @@ if( !empty($imagefield = get_field('imagefield')) ) {
 	
 	$imageurl=$imagealt=$imageclass = '';
 	$imageurl = ! empty($imagefield['url'] ) ? $imagefield['url'] : get_field('default_holding_image','options');
-	$imagedata .= '<div class="wcp-column imageside" style="background-image:url('.$imageurl.');">'.$position.'</div>' ;
+	$imagedata .= '<div class="wcp-column imageside" style="background-image:url('.$imageurl.');"></div>' ;
 
 } else  { 
 	$imagedata .= '<div class="wcp-column imageside"></div>';
