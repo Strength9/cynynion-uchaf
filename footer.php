@@ -57,10 +57,10 @@ $tiktok = ! empty( get_field('tiktok','options') ) ? '<li><a href="'.get_field('
 			 </ul>
 		 </div>
 		 <div class="wcp-column hidesmall">
-			 <?php wp_nav_menu( array(  'menu' => 'MainMenu','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<ul class="nm"><li class="title">Find Out More</li>%3$s</ul>' ) );?>  
+			 <?php wp_nav_menu( array(  'menu' => 'Quick Links','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<ul class="nm"><li class="title">Find Out More</li>%3$s</ul>' ) );?>  
 		 </div>
 		 <div class="wcp-column hidemedium">
-	 		<?php wp_nav_menu( array(  'menu' => 'MainMenu','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<ul class="nm"><li class="title">Legal Menu</li>%3$s</ul>' ) );?>  
+	 		<?php wp_nav_menu( array(  'menu' => 'Legal Menu','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<ul class="nm"><li class="title">Legal Menu</li>%3$s</ul>' ) );?>  
 		 </div>
 		 <div class="wcp-column full">
 			<ul class="socialmedia">

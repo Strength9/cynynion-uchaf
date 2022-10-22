@@ -454,6 +454,19 @@ p {
   font-weight: 200;
 }
 
+ul, ol {
+  width: 100%;
+  margin: 0px 0 30px;
+  text-align: left;
+}
+ul li, ol li {
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 0px;
+  font-weight: 200;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(100px);
@@ -507,7 +520,7 @@ header .navigation-menu .main-navigation {
   display: inline-block;
 }
 header .navigation-menu .main-navigation div.logo {
-  width: 200px;
+  width: 220px;
   height: 60px;
   position: absolute;
   left: 10px;
@@ -517,8 +530,33 @@ header .navigation-menu .main-navigation div.logo a {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: pink;
   color: #FFF;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: flex-start;
+}
+header .navigation-menu .main-navigation div.logo a img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media screen and (min-width: 350px) {
+  header .navigation-menu .main-navigation div.logo {
+    width: 260px;
+  }
+}
+@media screen and (min-width: 700px) {
+  header .navigation-menu .main-navigation div.logo {
+    width: 220px;
+  }
+}
+@media screen and (min-width: 1150px) {
+  header .navigation-menu .main-navigation div.logo {
+    width: 260px;
+  }
 }
 header .navigation-menu .main-navigation li {
   display: none;
@@ -533,7 +571,7 @@ header .navigation-menu .main-navigation li a {
   display: inline-block;
 }
 header .navigation-menu .main-navigation li a:hover {
-  color: yellow;
+  color: #9cb6f9;
   transition: 0.3s ease;
 }
 header .navigation-menu .menuopen {
@@ -632,10 +670,12 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
   margin: 0 auto;
   padding: 0;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 858px) {
   header .navigation-menu {
+    width: 100vw;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    margin-right: 0;
   }
   header .navigation-menu .menuopen {
     display: none;
@@ -644,16 +684,38 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: flex-end;
     margin: auto 0 auto auto;
     padding: 0;
+    width: auto;
   }
   header .navigation-menu .main-navigation li {
+    flex: 0 1 auto;
     position: relative;
     display: block;
   }
+}
+@media screen and (min-width: 858px) and (min-width: 910px) {
+  header .navigation-menu .main-navigation li {
+    margin: 0 5px;
+  }
+}
+@media screen and (min-width: 858px) and (min-width: 1100px) {
+  header .navigation-menu .main-navigation li {
+    margin: 0 10px;
+  }
+}
+@media screen and (min-width: 858px) and (min-width: 1200px) {
+  header .navigation-menu .main-navigation li {
+    margin: 0 20px;
+  }
+}
+@media screen and (min-width: 858px) {
   header .navigation-menu .main-navigation li a {
     padding: 5px 8px;
   }
+}
+@media screen and (min-width: 858px) {
   header .navigation-menu .main-navigation li ul {
     display: none;
     position: absolute;
@@ -676,9 +738,13 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
     margin: 0 !important;
     padding: 5px !important;
   }
+}
+@media screen and (min-width: 858px) {
   header .navigation-menu .main-navigation li:hover ul {
     display: block;
   }
+}
+@media screen and (min-width: 858px) {
   header .navigation-menu label {
     display: none;
   }
@@ -1303,6 +1369,7 @@ ul.features li:before {
   margin: 0px auto;
   text-align: center;
   font-size: 25px;
+  line-height: 1.2;
 }
 .imagegridtextblock .imagetextandgrid .introduction h3:after {
   content: "";
@@ -1555,6 +1622,9 @@ ul.features {
   width: 90%;
   max-width: 500px;
 }
+.pagehero.innerpage {
+  height: 550px;
+}
 .pagehero .overlay {
   background-color: rgba(0, 0, 0, 0.2);
   top: 0;
@@ -1577,6 +1647,8 @@ ul.features {
   letter-spacing: 2.5px;
   font-style: normal;
   margin: 25px 0 45px;
+  text-align: center;
+  line-height: 1.2;
 }
 .localattractionsgrid p {
   text-align: center;
@@ -1585,6 +1657,7 @@ ul.features {
   margin: 0px auto;
   text-align: center;
   font-size: 25px;
+  line-height: 1.2;
 }
 .localattractionsgrid h3:after {
   content: "";
@@ -1655,6 +1728,409 @@ ul.features {
 }
 .localattractionsgrid .attractionslink article p {
   text-align: left;
+}
+
+.mapblock {
+  width: 100%;
+  height: 390px;
+}
+@media screen and (min-width: 600px) {
+  .mapblock {
+    height: 500px;
+  }
+}
+
+.contactform {
+  background-color: #2f4377;
+  padding: 40px auto;
+}
+@media screen and (min-width: 500px) {
+  .contactform {
+    padding: 0px auto;
+  }
+}
+.contactform .wcp-columns {
+  padding: 0;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas: "infofields" "addressfields" "formfields";
+}
+.contactform .wcp-columns .wcp-column {
+  padding: 0;
+  margin: 0;
+}
+.contactform .wcp-columns .wcp-column.infofields {
+  grid-area: infofields;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  color: #FFF;
+  line-height: 1.4;
+}
+@media screen and (min-width: 500px) {
+  .contactform .wcp-columns .wcp-column.infofields {
+    text-align: left;
+  }
+  .contactform .wcp-columns .wcp-column.infofields .holder {
+    max-width: 360px;
+    margin: 0 auto 0 0;
+  }
+}
+.contactform .wcp-columns .wcp-column.addressfields {
+  grid-area: addressfields;
+  width: 100%;
+  text-align: center;
+}
+.contactform .wcp-columns .wcp-column.addressfields address {
+  font-size: 16px;
+  font-style: normal;
+  color: #FFF;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-weight: 200;
+}
+.contactform .wcp-columns .wcp-column.addressfields ul {
+  margin: 0;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column.addressfields ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  font-style: normal;
+  color: #FFF;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+.contactform .wcp-columns .wcp-column.addressfields ul li:last-child {
+  margin-bottom: 0;
+}
+.contactform .wcp-columns .wcp-column.addressfields ul li a {
+  font-weight: 200;
+  color: #FFF;
+  text-decoration: none;
+}
+.contactform .wcp-columns .wcp-column.addressfields ul li a:hover {
+  color: #9cb6f9;
+}
+@media screen and (min-width: 500px) {
+  .contactform .wcp-columns .wcp-column.addressfields {
+    text-align: right;
+  }
+  .contactform .wcp-columns .wcp-column.addressfields address {
+    text-align: right;
+    margin: 0 0 40px auto;
+  }
+  .contactform .wcp-columns .wcp-column.addressfields ul {
+    width: 100%;
+    text-align: right;
+    margin: 0 0 0 auto;
+  }
+  .contactform .wcp-columns .wcp-column.addressfields ul li {
+    line-height: 1.6;
+  }
+}
+.contactform .wcp-columns .wcp-column.formfields {
+  grid-area: formfields;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form {
+  width: 100% !important;
+  margin: 0px 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(minmax(10px, auto), 7);
+  gap: 20px 20px;
+  grid-auto-flow: row;
+  grid-template-areas: "nme" "mail" "phone" "nadults" "nkids" "datefrom" "message";
+}
+@media screen and (min-width: 500px) {
+  .contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(minmax(10px, auto), 4);
+    grid-template-areas: "nme nme" "mail phone" "nadults nkids" "datefrom datefrom" "message message";
+  }
+}
+@media screen and (min-width: 1000px) {
+  .contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(minmax(10px, auto), 3);
+    grid-template-areas: "nme nme mail mail phone phone" "nadults nkids datefrom datefrom datefrom datefrom" "message message message message message message";
+  }
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container #wpforms-37-field_4-container {
+  grid-area: nme;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container #wpforms-37-field_5-container {
+  grid-area: mail;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container #wpforms-37-field_6-container {
+  grid-area: phone;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container #wpforms-37-field_9-container {
+  grid-area: nadults;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container #wpforms-37-field_10-container {
+  grid-area: nkids;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container #wpforms-37-field_14-container {
+  grid-area: datefrom;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container #wpforms-37-field_8-container {
+  grid-area: message;
+  padding: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container input {
+  border: 0px;
+  color: #2f4377;
+  line-height: 30px;
+  height: 45px;
+  font-weight: 400;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container textarea {
+  height: 250px;
+  margin-bottom: 10px;
+  border: 0px;
+  color: #2f4377;
+  font-weight: 400;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container ::-webkit-input-placeholder { /* Edge */
+  color: #2f4377;
+  font-weight: 400;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #2f4377;
+  font-weight: 400;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-field-container ::placeholder {
+  color: #2f4377;
+  font-weight: 400;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-submit-container {
+  width: 100%;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-submit-container button[type=submit] {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 2.5px;
+  font-size: 18px;
+  transition: background-color 1s;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container form .wpforms-submit-container button[type=submit]:hover {
+  background-color: rgb(255, 255, 255);
+  color: #2f4377;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container .wpforms-confirmation-container-full {
+  padding: 100px 0;
+  background: #2f4377 !important;
+  border: #2f4377 !important;
+  color: #FFF;
+  text-align: center;
+  margin: 0;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container .wpforms-confirmation-container-full h2 {
+  display: block;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 2.5px;
+  line-height: 1.4;
+}
+.contactform .wcp-columns .wcp-column .wpforms-container .wpforms-confirmation-container-full p {
+  margin: 50px auto 0;
+}
+@media screen and (min-width: 500px) {
+  .contactform .wcp-columns {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "infofields addressfields" "formfields formfields";
+    grid-gap: 20px 20px;
+    padding: 80px 0;
+  }
+}
+@media screen and (min-width: 800px) {
+  .contactform .wcp-columns {
+    grid-gap: 60px 20px;
+    padding: 80px 0;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .contactform .wcp-columns {
+    grid-gap: 100px 20px;
+    padding: 100px 0;
+  }
+}
+
+.splitcol .splitcolgrid {
+  margin: auto;
+  max-width: 1320px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(0, auto) minmax(0, auto);
+  gap: 40px 0px;
+  grid-template-areas: "introduction" "area1" "area2" "area3";
+}
+@media only screen and (min-width: 800px) {
+  .splitcol .splitcolgrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(0, auto);
+    gap: 40px 80px;
+    grid-template-areas: "introduction introduction introduction" "area1 area2 area3";
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .splitcol .splitcolgrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.splitcol .splitcolgrid .introduction {
+  grid-area: introduction;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.splitcol .splitcolgrid .introduction h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 400px) {
+  .splitcol .splitcolgrid .introduction h1 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .splitcol .splitcolgrid .introduction h1 {
+    font-size: 40px;
+    margin-bottom: 45px;
+  }
+}
+.splitcol .splitcolgrid .introduction h3 {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.2;
+}
+.splitcol .splitcolgrid .introduction h3:after {
+  content: "";
+  width: 40%;
+  height: 8px;
+  background-color: #e2e2e2;
+  margin: 40px auto 60px;
+  display: block;
+}
+@media screen and (min-width: 400px) {
+  .splitcol .splitcolgrid .introduction h3:after {
+    margin-top: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .splitcol .splitcolgrid .introduction h3:after {
+    margin-top: 45px;
+  }
+}
+.splitcol .splitcolgrid .area1 {
+  grid-area: area1;
+}
+.splitcol .splitcolgrid .area2 {
+  grid-area: area2;
+}
+.splitcol .splitcolgrid .area3 {
+  grid-area: area3;
+}
+.splitcol .splitcolgrid .area1 h2, .splitcol .splitcolgrid .area2 h2, .splitcol .splitcolgrid .area3 h2 {
+  text-align: center;
+  display: block;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 2.5px;
+}
+.splitcol .splitcolgrid .area1 p, .splitcol .splitcolgrid .area2 p, .splitcol .splitcolgrid .area3 p {
+  text-align: center;
+}
+.splitcol .splitcolgrid .area1 p:last-child, .splitcol .splitcolgrid .area2 p:last-child, .splitcol .splitcolgrid .area3 p:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 800px) {
+  .splitcol .splitcolgrid .area1 h2, .splitcol .splitcolgrid .area2 h2, .splitcol .splitcolgrid .area3 h2 {
+    text-align: left;
+  }
+  .splitcol .splitcolgrid .area1 p, .splitcol .splitcolgrid .area2 p, .splitcol .splitcolgrid .area3 p {
+    text-align: left;
+  }
+}
+
+.longtext h1 {
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 2.5px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+@media screen and (min-width: 800px) {
+  .longtext h1 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .longtext h1 {
+    font-size: 35px;
+  }
+}
+.longtext h2 {
+  line-height: 1;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.longtext h3 {
+  font-weight: 100;
+  font-style: italic;
+  letter-spacing: 2px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 400px) {
+  .longtext {
+    text-align: left;
+  }
+  .longtext h1, .longtext h2, .longtext h3, .longtext h4, .longtext p {
+    text-align: left;
+  }
 }
 
 .fade-in {

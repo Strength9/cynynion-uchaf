@@ -1,0 +1,120 @@
+.splitcol {
+	
+
+	
+	.splitcolgrid {
+		margin:auto;
+		max-width: $contentwidth;
+		width:90%;
+		display: grid; 
+		  grid-template-columns: 1fr; 
+		  grid-template-rows: minmax(0,auto) minmax(0,auto); 
+		  gap: 40px 0px; 
+		  grid-template-areas:  "introduction" "area1" "area2" "area3"; 
+			
+			@media only screen and (min-width:800px) {
+				grid-template-columns: 1fr 1fr 1fr; 
+				  grid-template-rows: minmax(0,auto); 
+				  gap: 40px 80px; 
+				  grid-template-areas: 
+					"introduction introduction introduction"
+					"area1 area2 area3"; 
+			}
+			@media only screen and (min-width:1100px) {
+				grid-template-columns: 1fr 1fr 1fr; 
+			}
+	
+		.introduction { 
+			grid-area: introduction; 
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			text-align:center;
+			
+			h1 {
+				margin:0 auto;
+				text-align:center;
+				font-size:24px;
+				margin-bottom:25px;
+				
+				@media screen and (min-width: 400px ) {
+					font-size:28px;
+					margin-bottom:35px;
+				}
+				@media screen and (min-width: 600px ) {
+					font-size:40px;
+					margin-bottom:45px;
+				}
+				
+			}
+			h3 {
+				margin:0px auto;
+				text-align:center;
+				font-size:25px;
+				line-height:1.2;
+				
+				&:after {
+					content:"";
+					width:40%;
+					height:8px;
+					background-color:#e2e2e2;
+					margin:40px auto 60px;
+					display:block;
+					
+					@media screen and (min-width: 400px ) {
+						margin-top:35px;
+					}
+					@media screen and (min-width: 600px ) {
+						margin-top:45px;
+					}
+				}
+			}
+		}
+
+		.area1 { 
+			grid-area: area1;
+		}
+		 .area2 { 
+			 grid-area: area2;
+		 }
+		 .area3 { 
+			  grid-area: area3;
+		 }
+		 .area1, .area2, .area3 { 
+			
+				 h2 {
+					 
+					 text-align:center;
+
+					 
+					 display: block;
+					 margin-bottom: 25px;
+					 text-align: center;
+					 font-weight: 900;
+					 text-transform: uppercase;
+					 color: #000;
+					 letter-spacing: 2.5px;
+				 }
+				 p {
+					 text-align:center;
+					 &:last-child {
+						 margin-bottom:0;
+					 }
+				 }
+				 
+				 @media only screen and (min-width:800px) {
+					 h2 {
+						 text-align:left;
+					 }
+					 p {
+						 text-align:left;
+					 }
+				 }
+
+		}
+	}
+	
+}

@@ -52,6 +52,24 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_6353efa08a227",
+            "label": "Overlay Colour",
+            "name": "overlay_colour",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rgba(0,0,0,0.2)",
+            "enable_opacity": 1,
+            "return_format": "string"
         }
     ],
     "location": [
@@ -72,5 +90,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666283199
+    "modified": 1666445406
 }

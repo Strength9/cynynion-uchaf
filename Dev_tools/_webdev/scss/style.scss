@@ -1,21 +1,22 @@
   @import '_global';
 
-    @import '_design_styles/fonts';  
-    @import 'fontawesome/_fontawesome';
-    @import 'fontawesome/_brands'; 
-    @import '_design_styles/base';     
-    @import '_design_styles/animated';     
-    @import '_page_structure/header';      
-    @import '_page_structure/footer';  
-   @import '_customs_partials/paritals'; // Global Designs
-   @import '_customs_partials/imagegridtextblock';
-   @import '_customs_partials/calltoaction';
-   @import '_customs_partials/imageandtext';
-   @import '_customs_partials/calendar';
-   @import '_customs_partials/hero';
-   @import '_customs_partials/attractionsgrid';
+  @import '_design_styles/fonts';  
+  @import 'fontawesome/_fontawesome';
+  @import 'fontawesome/_brands'; 
+  @import '_design_styles/base';     
+  @import '_design_styles/animated';     
+  @import '_page_structure/header';      
+  @import '_page_structure/footer';  
+  @import '_customs_partials/paritals'; // Global Designs
+  @import '_customs_partials/imagegridtextblock';
+  @import '_customs_partials/calltoaction';
+  @import '_customs_partials/imageandtext';
+  @import '_customs_partials/calendar';
+  @import '_customs_partials/hero';
+  @import '_customs_partials/attractionsgrid';
+  @import '_customs_partials/mapblock';
+  @import '_customs_partials/contactform';
+  @import '_customs_partials/splitcols';
+  
+  @import '_customs_partials/longtext';
 
-#wpforms-37{
-  width:400px !important;
-  margin:200px auto;
-}

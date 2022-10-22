@@ -3,6 +3,56 @@
     "title": "Property Data",
     "fields": [
         {
+            "key": "field_6353c1f1f8166",
+            "label": "Booked Dates",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6353c2722dc32",
+            "label": "Dates",
+            "name": "bookeddates",
+            "aria-label": "",
+            "type": "multi_dates_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "display_input": 1
+        },
+        {
+            "key": "field_6353c20af8167",
+            "label": "Features",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_63525ac29f889",
             "label": "Property Features",
             "name": "property_features",
@@ -87,5 +137,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666341887
+    "modified": 1666433738
 }

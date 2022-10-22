@@ -139,7 +139,7 @@ add_filter('image_size_names_choose', 'post_image_sizes');
 /*-----------------------------------------------------------------------------------*/
 	function xray_scripts()  { 
 		// get the theme directory style.css and link to it in the header
-		wp_enqueue_style('custom_font', '//use.typekit.net/rir5arn.css');
+
 		wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v='.rand(111,999));
 		
 		
@@ -405,40 +405,5 @@ function ilc_favicon(){
 };
 
 
-function wpf_limit_date_picker() {
-	?>
-	<script type="text/javascript">
-		console.log ("Dave");
-
-			var disabledDays = [
-			   "20-10-2022", "22-10-2022", "25-10-2022"
-			];
-		
-		   //replace these with the id's of your datepickers
-		   jQuery("#datepicker").datepicker({
-			  dateFormat: 'dd-mm-yy',
-			  beforeShowDay: function(date){
-				 var day = date.getDay();
-				 var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
-				 var isDisabled = ($.inArray(string, disabledDays) != -1);
-		
-				 //day != 0 disables all Sundays
-				 return [!isDisabled];
-			  },
-			  
-			  onClose: function() {
-				 
-				  
-					  $('#wpforms-37-field_3').val($(this).val());
-				
-			  }
-		   });
-
-	
-
-	</script>
-	<?php
-}
-add_action( 'wpforms_wp_footer_end', 'wpf_limit_date_picker', 10 );
 
 
