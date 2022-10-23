@@ -5,9 +5,9 @@ $dropdownbackground : orange;
 
 /* Mobile Version */
 $mobilebreakpoint : 858px;
-$overlaynavcolor : blue;
+$overlaynavcolor : $blue;
 $MobileNavLink : #FFF;
-$MobileNavLinkHover : yellow;
+$MobileNavLinkHover : $lighterblue;
 $MobileMenuOpen : #FFF;
 $MobileMenuOpenHover : yellow;
 $MobileMenuClose : #FFF;

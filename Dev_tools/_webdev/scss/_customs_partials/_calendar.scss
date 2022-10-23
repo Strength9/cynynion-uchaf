@@ -1,0 +1,98 @@
+.bookingcalendar {
+	
+	
+	.calendar {
+		display: grid; 
+	  grid-template-columns: 1fr 1fr 1fr 1fr; 
+	 grid-auto-rows: minmax(30px, auto);
+	  gap: 0px 0px; 
+	  grid-template-areas: 
+		". . . ."; 
+	
+	.monthblock {
+		width:290px;
+		margin:25px;
+		
+		ul {
+			margin:0;
+			padding:0;
+			display: grid; 
+			  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+			  grid-template-rows: 1fr; 
+			  gap: 0px 0px; 
+			  grid-template-areas: 
+				". . . . . . ."; 
+			
+		
+			
+			li {
+				list-style:none;
+				margin:0;
+				padding:0;
+				
+				order: 0;
+				flex: 0 0 auto;
+				height:40px;
+				
+				text-align:center;
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+				font-weight:400;
+				
+				&.disabled {
+					color:#cdc8c8;
+				}
+				
+				
+				&:last-child {
+					
+				}
+				
+				&.fill {
+					background-color:#cdc8c8;
+				}
+			}
+			
+			&.monthname {
+				border: 1px solid $blue;
+				li {
+					
+					font-weight:600;
+					text-transform:uppercase;
+					flex: 0 0 100%;
+					grid-column: 1 /  span 7;
+					
+
+				}
+			}
+			&.daysofweek {
+				
+				li {
+					background-color:$blue;
+					color:#FFF;
+
+				}
+			}
+			&.calendar_row {
+				border-left:1px solid $blue;
+				border-right:1px solid $blue;
+				border-bottom:1px solid $blue;
+				
+				li {
+					border-right:1px solid $blue;
+					
+					&:last-child {
+						border-right:0px solid $blue;
+					}
+				}
+				
+			}
+		}
+	}
+	
+}
+}

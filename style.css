@@ -575,7 +575,7 @@ header .navigation-menu #menu-toggle:checked + .main-navigation {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: blue;
+  background-color: #2f4377;
   display: block;
   margin: 0;
   padding: 100px 0 0;
@@ -608,7 +608,7 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li a {
   color: #FFF;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation li a:hover {
-  color: yellow;
+  color: #9cb6f9;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation li > ul {
   margin: 0px auto;
@@ -1576,6 +1576,73 @@ ul.features {
     column-count: 2 !important;
     column-gap: 20px !important;
   }
+}
+
+.bookingcalendar .calendar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(30px, auto);
+  gap: 0px 0px;
+  grid-template-areas: ". . . .";
+}
+.bookingcalendar .calendar .monthblock {
+  width: 290px;
+  margin: 25px;
+}
+.bookingcalendar .calendar .monthblock ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . . . . . .";
+}
+.bookingcalendar .calendar .monthblock ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  order: 0;
+  flex: 0 0 auto;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+.bookingcalendar .calendar .monthblock ul li.disabled {
+  color: #cdc8c8;
+}
+.bookingcalendar .calendar .monthblock ul li.fill {
+  background-color: #cdc8c8;
+}
+.bookingcalendar .calendar .monthblock ul.monthname {
+  border: 1px solid #2f4377;
+}
+.bookingcalendar .calendar .monthblock ul.monthname li {
+  font-weight: 600;
+  text-transform: uppercase;
+  flex: 0 0 100%;
+  grid-column: 1/span 7;
+}
+.bookingcalendar .calendar .monthblock ul.daysofweek li {
+  background-color: #2f4377;
+  color: #FFF;
+}
+.bookingcalendar .calendar .monthblock ul.calendar_row {
+  border-left: 1px solid #2f4377;
+  border-right: 1px solid #2f4377;
+  border-bottom: 1px solid #2f4377;
+}
+.bookingcalendar .calendar .monthblock ul.calendar_row li {
+  border-right: 1px solid #2f4377;
+}
+.bookingcalendar .calendar .monthblock ul.calendar_row li:last-child {
+  border-right: 0px solid #2f4377;
 }
 
 .pagehero {
