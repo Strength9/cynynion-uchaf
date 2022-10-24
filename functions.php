@@ -416,7 +416,7 @@ function getslug() {
 	return $post->post_name;
 }
 
-function checkthisdate($dayDate,$month,$yeartoshow,$disabled) {
+function checkthisdate($dayDate,$month,$yeartoshow,$disabled,$peakdates) {
 	
 	if ($dayDate <= 9) {
 		$dayDate = '0'.$dayDate;
@@ -424,23 +424,36 @@ function checkthisdate($dayDate,$month,$yeartoshow,$disabled) {
 	
 	$chkdate=$yeartoshow.'-'.$month.'-'.$dayDate;
 	
-	$pos = strpos($disabled, $chkdate);
+	$ppos = strpos($peakdates, $chkdate);
+	
+	$i = '';
+	if ($ppos !== false) {
+		 $i = "peak ";
+		 $tooltip = '(Peak Time) ';
+	} else {
+		$i = '';
+		$tooltip = '(Off Peak Time)';
+	};
+	
+	$dpos = strpos($disabled, $chkdate);
 
-	if ($pos !== false) {
-		 $i = "disabled";
+	if ($dpos !== false) {
+		 $i .= "disabled";
+		 $tooltip = 'Unavailable';
 	} else {
 		$startDate = strtotime(date('Y-m-d', strtotime($chkdate) ) );
 		$currentDate = strtotime(date('Y-m-d'));
 		
 		if($startDate < $currentDate) {
-			$i = "disabled";
-			$tooltip = "Booked";
+			$i .= "disabled";
+			$tooltip = 'Unavailable';
 		} else {
-			$i = '';
-			$tooltip = 'Available';
+			$i .= '';
+			$tooltip = 'Available '.$tooltip;
 		}
 
 	};	
+	
 	return '<li class="'.$i.'" data-tooltip="'.$tooltip.'">'.$dayDate.'</li>';
 };
 

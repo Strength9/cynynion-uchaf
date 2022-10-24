@@ -20,6 +20,13 @@ foreach ($bookeddates as $datea) {
 	$value .= $datea.',';
 };
 $disabled = rtrim($value, ','); 
+
+$peakdates = ! empty( get_field('peak_period','options') ) ? get_field('peak_period','options') : '';
+$pvalue = '';
+foreach ($peakdates as $pdate) {
+	$pvalue .= $pdate.',';
+};
+$peakme = rtrim($pvalue, ','); 
 /* --------- */
 
 
@@ -84,14 +91,14 @@ WHile ($counter <= $noofmonthstoshow ) {
 				if ($GetdayOfWeek > 0) { $fill = 1; while ($fill <= $GetdayOfWeek) { $calendar .= '<li class="fill">&nbsp;</li>'; $fill ++; }; };
 			// Add first Week of days
 				while ($fill < 8) {
-					$calendar .= checkthisdate($dayDate,$nmMth,$yeartoshow,$disabled);
+					$calendar .= checkthisdate($dayDate,$nmMth,$yeartoshow,$disabled,$peakme);
 					$dayDate ++; $fill ++;
 				};
 			// Add in remainder of the days
 				while ($dayDate <= $numberDays) {
 					$calendar .= '</ul><ul class="calendar_row">';
 					$fill = 1;
-					while ($fill < 8 && $dayDate <= $numberDays) { $calendar .= checkthisdate($dayDate,$nmMth,$yeartoshow,$disabled); $dayDate ++; $fill ++; };
+					while ($fill < 8 && $dayDate <= $numberDays) { $calendar .= checkthisdate($dayDate,$nmMth,$yeartoshow,$disabled,$peakme); $dayDate ++; $fill ++; };
 				};
 			// Fill out remainder of the days
 				while ($fill <= 7) { $calendar .= '<li class="fill">&nbsp;</li>'; $fill ++; };
@@ -115,21 +122,35 @@ echo '<section id="availability" class="'.$blockclass .'">
 	 	<div class="titleblock">'.$calendar_title.'</div>
 		 <div class="instructions">'.$instructions.'</div>
 		 <div class="navigation">
-			   <div class="previous">
+			   <div class="previouslink">
 					 '.$previouslink.'
 				  </div>
-				  <div class="next">
+				  <div class="key">
+				  	<ul>
+					  <li class="ua">Unavailable</li>
+					  <li class="op">Off Peak</li>
+					  <li class="pk">Peak</li>
+					</ul>
+				  </div>
+				  <div class="nextlink">
 					 '.$nextlink.'
 				  </div>
 		  </div>
 		<div class="calendar">'.$calendar.'</div>
-		<div class="navigation">
-			   <div class="previous">
-				  '.$previouslink.'
-			   </div>
-			   <div class="next">
-				  '.$nextlink.'
-			   </div>
+ <div class="navigation">
+			   <div class="previouslink">
+					 '.$previouslink.'
+				  </div>
+				  <div class="key">
+					  <ul>
+					  <li class="ua">Unavailable</li>
+					  <li class="op">Off Peak</li>
+					  <li class="pk">Peak</li>
+					</ul>
+				  </div>
+				  <div class="nextlink">
+					 '.$nextlink.'
+				  </div>
 		  </div>
 		  <div class="instructions">'.$instructions.'</div>
 		 

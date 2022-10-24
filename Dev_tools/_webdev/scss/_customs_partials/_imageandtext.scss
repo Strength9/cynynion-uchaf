@@ -71,6 +71,21 @@
 						 letter-spacing:2.5px;
 
 					 }
+					 
+					 h5{
+						  text-transform:uppercase;
+						  display:block;
+						  margin:25px 0 0;
+						 
+						  text-align:center;
+						  
+						  font-weight:700;
+						  text-transform:uppercase;
+						  color:#000;
+						  letter-spacing:2.5px;
+						  font-size:18px;
+					 
+					  }
 					 p {
 						 text-align:center;
 						 &:last-child {
@@ -81,21 +96,14 @@
 					 @media only screen and (min-width:800px) {
 						 
 						 max-width:900px;
-						  h2 {
+						  h2, h5 {
 							  text-align:left;
 						  }
 						  p {
 							  text-align:left;
 						  }
 						  
-						  &.left {
-							  h2 {
-									//text-align:right;
-								}
-								p {
-								//	text-align:right;
-								}
-						  }
+
 					  }
 				 }
 			 }
