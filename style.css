@@ -1792,6 +1792,33 @@ ul.features {
     grid-template-areas: ". . . .";
   }
 }
+.bookingcalendar .bookingdata .instructions {
+  padding: 30px 20px;
+}
+.bookingcalendar .bookingdata .instructions h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 2.5px;
+}
+.bookingcalendar .bookingdata .instructions p a {
+  width: 240px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid #2f4377;
+  padding: 8px 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2f4377;
+  margin: 10px auto;
+}
+.bookingcalendar .bookingdata .instructions p a:hover {
+  color: #FFF;
+  background-color: #2f4377;
+}
 
 .pagehero {
   width: 100vw;
@@ -2014,6 +2041,7 @@ ul.features {
     margin: 0 0 0 auto;
   }
   .contactform .wcp-columns .wcp-column.addressfields ul li {
+    text-align: right;
     line-height: 1.6;
   }
 }
@@ -2314,5 +2342,98 @@ ul.features {
   }
   .longtext h1, .longtext h2, .longtext h3, .longtext h4, .longtext p {
     text-align: left;
+  }
+}
+
+.attractiondetails article {
+  margin: 0 0 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px minmax(10px, auto) 300px;
+  gap: 30px 0px;
+  grid-template-areas: "thumbnail" "detail" "map";
+}
+@media screen and (min-width: 600px) {
+  .attractiondetails article {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px 30px;
+    grid-template-areas: "thumbnail map" "detail detail";
+  }
+}
+.attractiondetails article .detail {
+  grid-area: detail;
+}
+.attractiondetails article .detail a {
+  color: #9cb6f9;
+  text-decoration: none;
+}
+.attractiondetails article .detail a:hover {
+  color: #2f4377;
+}
+.attractiondetails article .thumbnail {
+  grid-area: thumbnail;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.attractiondetails article .thumbnail h3 {
+  background-color: #2f4377;
+  color: #FFF !important;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 2.5px;
+}
+@media screen and (min-width: 535px) {
+  .attractiondetails article .thumbnail h3 {
+    font-size: 25px;
+    padding: 20px 30px 20px 20px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .attractiondetails article .thumbnail h3 {
+    font-size: 35px;
+    padding: 20px 30px 20px 20px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .attractiondetails article .thumbnail h3 {
+    font-size: 45px;
+    padding: 20px 30px 20px 20px;
+  }
+}
+.attractiondetails article .map {
+  grid-area: map;
+}
+.attractiondetails article .map iframe {
+  width: 100%;
+  height: 101%;
+}
+.attractiondetails .spacer {
+  content: "";
+  width: 40%;
+  height: 8px;
+  background-color: #e2e2e2;
+  margin: 40px auto 60px;
+  display: block;
+}
+@media screen and (min-width: 400px) {
+  .attractiondetails .spacer {
+    margin-top: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .attractiondetails .spacer {
+    margin-top: 45px;
   }
 }

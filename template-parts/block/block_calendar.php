@@ -113,6 +113,7 @@ echo '<section id="availability" class="'.$blockclass .'">
 	<div class="bookingdata">'.$calendar_intro_title.$calendar_introduction.'
 
 	 	<div class="titleblock">'.$calendar_title.'</div>
+		 <div class="instructions">'.$instructions.'</div>
 		 <div class="navigation">
 			   <div class="previous">
 					 '.$previouslink.'
@@ -131,6 +132,7 @@ echo '<section id="availability" class="'.$blockclass .'">
 			   </div>
 		  </div>
 		  <div class="instructions">'.$instructions.'</div>
+		 
 	</div>
 </section>';
 ?>

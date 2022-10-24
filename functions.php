@@ -453,3 +453,5 @@ function daysoftheweek() {
 	return $Calendardays;
 
 };
+
+remove_filter( 'the_content', 'wpautop' );
