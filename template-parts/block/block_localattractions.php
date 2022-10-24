@@ -43,7 +43,7 @@ $post_id = get_the_ID();
 				<div class="locationthumbnail" style="background-image:url('.$thumbnail_url.');"></div>
 				<div class="locationtitle"><h3>'.get_the_title().'</h3></div>
 				<div class="locationextract">'.$extract.'</div>
-				<a href="'.get_permalink($post_id).'">Read More</a>
+				<a href="/out-about/#'.strtolower(str_replace(" ","",get_the_title())).'">Read More</a>
 			
 	</article>';
 	

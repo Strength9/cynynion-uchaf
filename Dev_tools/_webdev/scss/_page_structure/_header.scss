@@ -170,7 +170,13 @@ header {
   		li {
 			
 			  display:block;
-		  	a {color:$MobileNavLink;
+		  	a {
+				  font-size:20px;
+				  text-transform:uppercase;
+				  letter-spacing:2.5px;
+				  font-weight:600;
+				  margin:5px auto;
+				  color:$MobileNavLink;
 			  	
 			  	&:hover {
 				  	color:$MobileNavLinkHover;

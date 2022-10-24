@@ -35,7 +35,7 @@ while ( $loop->have_posts() ) : $loop->the_post();
 	
 	//google_maps_link
 	
-		$gridoutput .= '<article>
+		$gridoutput .= '<article id="'.strtolower(str_replace(" ","",get_the_title())).'">
 				<div class="thumbnail" style="background-image:url('.$thumbnail_url.');"><h3>'.get_the_title().'</h3></div>
 				<div class="map">
 				<iframe src="'.$map.'" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
@@ -49,7 +49,6 @@ wp_reset_postdata();
 echo '<section '.$anchor.' class="'.$blockclass .'">
 	<div class="wcp-columns">
 		 <div class="wcp-column full">
-		 Attractions
 		 '.$area_title.$area_content.$gridoutput.'
 		 </div>
 	</div>

@@ -605,6 +605,11 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li {
   display: block;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation li a {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  margin: 5px auto;
   color: #FFF;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation li a:hover {
@@ -1834,7 +1839,7 @@ ul.features {
   max-width: 500px;
 }
 .pagehero.innerpage {
-  height: 550px;
+  height: 650px;
 }
 .pagehero .overlay {
   background-color: rgba(0, 0, 0, 0.2);
@@ -2293,6 +2298,13 @@ ul.features {
 .splitcol .splitcolgrid .area1 p:last-child, .splitcol .splitcolgrid .area2 p:last-child, .splitcol .splitcolgrid .area3 p:last-child {
   margin-bottom: 0;
 }
+.splitcol .splitcolgrid .area1 p a, .splitcol .splitcolgrid .area2 p a, .splitcol .splitcolgrid .area3 p a {
+  color: #9cb6f9;
+  text-decoration: none;
+}
+.splitcol .splitcolgrid .area1 p a:hover, .splitcol .splitcolgrid .area2 p a:hover, .splitcol .splitcolgrid .area3 p a:hover {
+  color: #2f4377;
+}
 @media only screen and (min-width: 800px) {
   .splitcol .splitcolgrid .area1 h2, .splitcol .splitcolgrid .area2 h2, .splitcol .splitcolgrid .area3 h2 {
     text-align: left;
@@ -2335,6 +2347,9 @@ ul.features {
   letter-spacing: 2px;
   width: 100%;
   margin-bottom: 15px;
+}
+.longtext p {
+  width: 100%;
 }
 @media screen and (min-width: 400px) {
   .longtext {
@@ -2435,5 +2450,117 @@ ul.features {
 @media screen and (min-width: 600px) {
   .attractiondetails .spacer {
     margin-top: 45px;
+  }
+}
+
+.gallery h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 400px) {
+  .gallery h1 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .gallery h1 {
+    font-size: 40px;
+    margin-bottom: 45px;
+  }
+}
+.gallery h3 {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.2;
+}
+.gallery h3:after {
+  content: "";
+  width: 40%;
+  height: 8px;
+  background-color: #e2e2e2;
+  margin: 40px auto 60px;
+  display: block;
+}
+@media screen and (min-width: 400px) {
+  .gallery h3:after {
+    margin-top: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .gallery h3:after {
+    margin-top: 45px;
+  }
+}
+.gallery p {
+  text-align: center;
+}
+.gallery .galleryimages {
+  margin: 60px auto;
+  padding: 0;
+  list-style: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px 20px;
+}
+.gallery .galleryimages li {
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+}
+.gallery .galleryimages li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 450px) {
+  .gallery .galleryimages {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery .galleryimages li {
+    height: 150px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .gallery .galleryimages {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .gallery .galleryimages li {
+    height: 150px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .gallery .galleryimages {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .gallery .galleryimages li {
+    height: 190px;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .gallery .galleryimages {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .gallery .galleryimages li {
+    height: 210px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .gallery .galleryimages {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .gallery .galleryimages li {
+    height: 240px;
   }
 }
