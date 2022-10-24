@@ -1589,6 +1589,13 @@ ul.features li:before {
 .imageandtext .wcp-columns .wcp-column.textside .content p:last-child {
   margin-bottom: 0;
 }
+.imageandtext .wcp-columns .wcp-column.textside .content p a {
+  color: #9cb6f9;
+  text-decoration: none;
+}
+.imageandtext .wcp-columns .wcp-column.textside .content p a:hover {
+  color: #2f4377;
+}
 @media only screen and (min-width: 800px) {
   .imageandtext .wcp-columns .wcp-column.textside .content {
     max-width: 900px;
