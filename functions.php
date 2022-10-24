@@ -388,8 +388,7 @@ function wpb_add_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
 
-/**
-	 * Favicons*/
+/** Favicons */
 	 
 add_action( 'wp_head', 'ilc_favicon');
 function ilc_favicon(){
@@ -405,5 +404,52 @@ function ilc_favicon(){
 };
 
 
+function wwp_custom_query_vars_filter($vars) {
+	$vars[] .= 'nm';
+	$vars[] .= 'ny';
+	return $vars;
+}
+add_filter( 'query_vars', 'wwp_custom_query_vars_filter' );
 
+function getslug() {
+	global $post; 
+	return $post->post_name;
+}
 
+function checkthisdate($dayDate,$month,$yeartoshow,$disabled) {
+	
+	if ($dayDate <= 9) {
+		$dayDate = '0'.$dayDate;
+	};
+	
+	$chkdate=$yeartoshow.'-'.$month.'-'.$dayDate;
+	
+	$pos = strpos($disabled, $chkdate);
+
+	if ($pos !== false) {
+		 $i = "disabled";
+	} else {
+		$startDate = strtotime(date('Y-m-d', strtotime($chkdate) ) );
+		$currentDate = strtotime(date('Y-m-d'));
+		
+		if($startDate < $currentDate) {
+			$i = "disabled";
+			$tooltip = "Booked";
+		} else {
+			$i = '';
+			$tooltip = 'Available';
+		}
+
+	};	
+	return '<li class="'.$i.'" data-tooltip="'.$tooltip.'">'.$dayDate.'</li>';
+};
+
+function daysoftheweek() {
+	$daysOfWeek = array('S','M','T','W','T','F','S');
+	$Calendardays = '<ul class="daysofweek">';
+	foreach($daysOfWeek as $day) {$Calendardays  .= "<li class='dayname'>$day</li>";};
+	$Calendardays .= '</ul>';
+	
+	return $Calendardays;
+
+};

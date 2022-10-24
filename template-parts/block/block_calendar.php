@@ -12,74 +12,61 @@ if( !empty( $block['data']['_is_preview'] ) ) {
 		echo' <img src="'.get_stylesheet_directory_uri().'/template-parts/previews/block_template.png" alt="Title Field">';
 		return;
 } 
-/* --------------------------------------------------------------------------- */
 include('______partials_global.php');
 
-/* ---------------------------------------------------------------------------
-
-
-*/
-
-
 $bookeddates = ! empty( get_field('bookeddates','options') ) ? get_field('bookeddates','options') : '';
-/* --------- */
-
 $value = '';
 foreach ($bookeddates as $datea) {
 	$value .= $datea.',';
 };
-$disabled = rtrim($value, ',');
+$disabled = rtrim($value, ','); 
+/* --------- */
 
 
+$calendar_intro_title = ! empty( get_field('calendar_intro_title') ) ? '<h1>'.get_field('calendar_intro_title').'</h1>' : '';
+$calendar_introduction = ! empty( get_field('calendar_introduction') ) ? get_field('calendar_introduction') : '';
+$calendar_title = ! empty( get_field('calendar_title') ) ? '<h2>'.get_field('calendar_title').'</h2>' : 'Our Calendar';
 
-function checkthisdate($dayDate,$month,$yeartoshow,$disabled) {
-	
-	if ($dayDate <= 9) {
-		$dayDate = '0'.$dayDate;
-	};
-	
-	$chkdate=$yeartoshow.'-'.$month.'-'.$dayDate;
-	
-
-
-$pos = strpos($disabled, $chkdate);
-
-	if ($pos !== false) {
-		 $i = "disabled";
-	} else {
-		$startDate = strtotime(date('Y-m-d', strtotime($chkdate) ) );
-		$currentDate = strtotime(date('Y-m-d'));
-		
-		if($startDate < $currentDate) {
-			$i = "disabled";
-		} else {
-			$i = '';
-		}
-
-	};	
-	return '<li class="'.$i.'">'.$dayDate.'</li>';
-};
-
-$daysOfWeek = array('S','M','T','W','T','F','S');
-$Calendardays = '<ul class="daysofweek">';
-foreach($daysOfWeek as $day) {
-	$Calendardays  .= "<li class='dayname'>$day</li>";
-};
-$Calendardays .= '</ul>';
-
-
-//'2023-01-05
+ $instructions = ! empty( get_field('instructions') ) ? get_field('instructions') : '';
+$noofmonthstoshow = ! empty( get_field('number_of_months_to_show') ) ? get_field('number_of_months_to_show') : 4;
 
 
 
 
+
+
+
+
+$nm = sanitize_text_field( get_query_var( 'nm' ) );
+$ny = sanitize_text_field( get_query_var( 'ny' ) );
+if ($nm > 0) {$month = $nm;} else { $month =  date('n');}
+if ($ny > 0) {$yeartoshow = $ny;} else { $yeartoshow =  date('Y');}
 
 $counter = 1;
-$month =  6;
-$yeartoshow = 2022;
 
-WHile ($counter <= 12 ) {
-	while (($month <= 12 ) && ($counter <= 12 )) {
+
+$nextdate = new DateTime($yeartoshow.'-'.$month.'-01');
+$nextdate->modify("+$noofmonthstoshow month"); 
+$previousdate = new DateTime($yeartoshow.'-'.$month.'-01');
+$previousdate->modify("-$noofmonthstoshow month"); 
+
+
+$cutofdate = new DateTime(date('Y-m-d'));
+$cutofdate->modify("-1 month"); 
+
+
+if($previousdate->format('Y-m-d') < $cutofdate->format('Y-m-d')) {
+	$previouslink = '';
+} else {
+	$previouslink =  '<a href="'.getslug().'?nm='.$previousdate->format('n').'&ny='.$previousdate->format('Y').'#availability"><i class="fa-light fa-chevrons-left"></i> Previous</a>';	
+};
+
+
+$nextlink = '<a href="'.getslug().'?nm='.$nextdate->format('n').'&ny='.$nextdate->format('Y').'#availability">Next <i class="fa-light fa-chevrons-right"></i></a>';
+
+
+WHile ($counter <= $noofmonthstoshow ) {
+	while (($month <= 12 ) && ($counter <= $noofmonthstoshow )) {
 
 			$firstDayOfMonth = mktime(0,0,0,$month,1,$yeartoshow);
 			$numberDays = date('t',$firstDayOfMonth);
@@ -90,7 +77,7 @@ WHile ($counter <= 12 ) {
 			$nmMth = date('m', strtotime( $dateComponents['month']));
 		
 			$calendar .= '<div class="monthblock">
-								<ul class="monthname"><li class="monthheader">'. $dateComponents['month'].' '.$yeartoshow.'</li></ul>'.$Calendardays.'
+								<ul class="monthname"><li class="monthheader">'. $dateComponents['month'].' '.$yeartoshow.'</li></ul>'.daysoftheweek().'
 								<ul class="calendar_row">';
 			// Add Fills in at the start
 			$fill = 1;
@@ -109,7 +96,6 @@ WHile ($counter <= 12 ) {
 			// Fill out remainder of the days
 				while ($fill <= 7) { $calendar .= '<li class="fill">&nbsp;</li>'; $fill ++; };
 			$calendar .= '</ul></div>';
-			echo $counter;
 			$month ++;
 			$counter ++;
 	};
@@ -122,14 +108,29 @@ WHile ($counter <= 12 ) {
 
 };
 
-echo '<section '.$anchor.' class="'.$blockclass .'">
-	<div class="wcp-columns '.$background_colour.'"><br><br><br><br><br><br><br><br>
-	 	<div class="wcp-column full">
-		 Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.
-			 Previous Year
-			 Nexy year
-			 <div class="calendar">'.$calendar.'</div>
-		 </div>
+
+echo '<section id="availability" class="'.$blockclass .'">
+	<div class="bookingdata">'.$calendar_intro_title.$calendar_introduction.'
+
+	 	<div class="titleblock">'.$calendar_title.'</div>
+		 <div class="navigation">
+			   <div class="previous">
+					 '.$previouslink.'
+				  </div>
+				  <div class="next">
+					 '.$nextlink.'
+				  </div>
+		  </div>
+		<div class="calendar">'.$calendar.'</div>
+		<div class="navigation">
+			   <div class="previous">
+				  '.$previouslink.'
+			   </div>
+			   <div class="next">
+				  '.$nextlink.'
+			   </div>
+		  </div>
+		  <div class="instructions">'.$instructions.'</div>
 	</div>
 </section>';
 ?>

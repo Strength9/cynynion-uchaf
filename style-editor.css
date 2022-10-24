@@ -1179,6 +1179,34 @@ section {
 }
 
 /* Links */
+[data-tooltip]:before {
+  /* needed - do not touch */
+  content: attr(data-tooltip);
+  position: absolute;
+  opacity: 0;
+  /* customizable */
+  transition: all 0.15s ease;
+  padding: 10px;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px silver;
+}
+
+[data-tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+  /* customizable */
+  background: #2f4377;
+  color: #FFF;
+  margin-top: -50px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+  pointer-events: none;
+}
+
 .wcp-columns {
   margin: 0 auto;
   max-width: 1320px;
@@ -1609,18 +1637,110 @@ ul.features {
   }
 }
 
-.bookingcalendar .calendar {
+.bookingcalendar .bookingdata {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  text-align: center;
+}
+.bookingcalendar .bookingdata h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 400px) {
+  .bookingcalendar .bookingdata h1 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .bookingcalendar .bookingdata h1 {
+    font-size: 40px;
+    margin-bottom: 45px;
+  }
+}
+.bookingcalendar .bookingdata h2 {
+  display: block;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 2.5px;
+}
+.bookingcalendar .bookingdata h3 {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.2;
+}
+.bookingcalendar .bookingdata h3:after {
+  content: "";
+  width: 40%;
+  height: 8px;
+  background-color: #e2e2e2;
+  margin: 40px auto 60px;
+  display: block;
+}
+@media screen and (min-width: 400px) {
+  .bookingcalendar .bookingdata h3:after {
+    margin-top: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .bookingcalendar .bookingdata h3:after {
+    margin-top: 45px;
+  }
+}
+.bookingcalendar .bookingdata .titleblock {
+  text-align: center;
+  display: block;
+  padding: 30px 10px 25px;
+}
+.bookingcalendar .bookingdata .navigation {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+}
+.bookingcalendar .bookingdata .navigation > div {
+  flex: 0 0 40%;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+}
+.bookingcalendar .bookingdata .navigation > div:nth-child(2) {
+  text-align: right;
+}
+.bookingcalendar .bookingdata .navigation > div a {
+  font-size: 18px;
+  color: #2f4377;
+  text-decoration: none;
+}
+.bookingcalendar .bookingdata .navigation > div a:hover {
+  color: #9cb6f9;
+  cursor: pointer;
+}
+.bookingcalendar .bookingdata .calendar {
+  margin: 30px auto;
+  width: 245px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column: repeat(245px, 1);
   grid-auto-rows: minmax(30px, auto);
-  gap: 0px 0px;
-  grid-template-areas: ". . . .";
+  gap: 20px 20px;
+  grid-template-areas: ".";
 }
-.bookingcalendar .calendar .monthblock {
-  width: 290px;
-  margin: 25px;
+.bookingcalendar .bookingdata .calendar .monthblock {
+  width: 245px;
+  margin: 0 auto auto;
 }
-.bookingcalendar .calendar .monthblock ul {
+.bookingcalendar .bookingdata .calendar .monthblock ul {
   margin: 0;
   padding: 0;
   display: grid;
@@ -1629,13 +1749,13 @@ ul.features {
   gap: 0px 0px;
   grid-template-areas: ". . . . . . .";
 }
-.bookingcalendar .calendar .monthblock ul li {
+.bookingcalendar .bookingdata .calendar .monthblock ul li {
   list-style: none;
   margin: 0;
   padding: 0;
   order: 0;
   flex: 0 0 auto;
-  height: 40px;
+  height: 35px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1645,35 +1765,63 @@ ul.features {
   align-items: center;
   font-weight: 400;
 }
-.bookingcalendar .calendar .monthblock ul li.disabled {
+.bookingcalendar .bookingdata .calendar .monthblock ul li.disabled {
   color: #cdc8c8;
 }
-.bookingcalendar .calendar .monthblock ul li.fill {
+.bookingcalendar .bookingdata .calendar .monthblock ul li.fill {
   background-color: #cdc8c8;
 }
-.bookingcalendar .calendar .monthblock ul.monthname {
+.bookingcalendar .bookingdata .calendar .monthblock ul.monthname {
   border: 1px solid #2f4377;
 }
-.bookingcalendar .calendar .monthblock ul.monthname li {
+.bookingcalendar .bookingdata .calendar .monthblock ul.monthname li {
   font-weight: 600;
   text-transform: uppercase;
   flex: 0 0 100%;
   grid-column: 1/span 7;
 }
-.bookingcalendar .calendar .monthblock ul.daysofweek li {
+.bookingcalendar .bookingdata .calendar .monthblock ul.daysofweek li {
   background-color: #2f4377;
   color: #FFF;
 }
-.bookingcalendar .calendar .monthblock ul.calendar_row {
+.bookingcalendar .bookingdata .calendar .monthblock ul.calendar_row {
   border-left: 1px solid #2f4377;
   border-right: 1px solid #2f4377;
   border-bottom: 1px solid #2f4377;
 }
-.bookingcalendar .calendar .monthblock ul.calendar_row li {
+.bookingcalendar .bookingdata .calendar .monthblock ul.calendar_row li {
   border-right: 1px solid #2f4377;
 }
-.bookingcalendar .calendar .monthblock ul.calendar_row li:last-child {
+.bookingcalendar .bookingdata .calendar .monthblock ul.calendar_row li:hover {
+  cursor: pointer;
+}
+.bookingcalendar .bookingdata .calendar .monthblock ul.calendar_row li:last-child {
   border-right: 0px solid #2f4377;
+}
+@media screen and (min-width: 560px) {
+  .bookingcalendar .bookingdata .calendar {
+    width: 510px;
+    grid-column: repeat(245px, 2);
+    grid-auto-rows: minmax(30px, auto);
+    grid-template-areas: ". .";
+  }
+}
+@media screen and (min-width: 900px) {
+  .bookingcalendar .bookingdata .calendar {
+    width: 795px;
+    grid-column: repeat(245px, 3);
+    grid-auto-rows: minmax(30px, auto);
+    grid-template-areas: ". . .";
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bookingcalendar .bookingdata .calendar {
+    width: 100%;
+    max-width: 1320px;
+    grid-column: repeat(1fr, 4);
+    grid-auto-rows: minmax(30px, auto);
+    grid-template-areas: ". . . .";
+  }
 }
 
 .pagehero {
