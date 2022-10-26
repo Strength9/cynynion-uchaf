@@ -2464,7 +2464,7 @@ ul.features {
 @media screen and (min-width: 600px) {
   .attractiondetails article {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 350px 1fr;
     gap: 30px 30px;
     grid-template-areas: "thumbnail map" "detail detail";
   }
