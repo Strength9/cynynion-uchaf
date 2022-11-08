@@ -329,11 +329,7 @@ function example_block_category( $categories, $post ) {
 	add_filter( 'block_categories_all', 'example_block_category', 10, 2);
 
 
-function xray_block_scripts()  { 
-	// get the theme directory style.css and link to it in the header
-	wp_enqueue_script( 'xray-2', get_template_directory_uri() . '/assets/js/slider.js');
-}
-add_action( 'wp_enqueue_scripts', 'xray_block_scripts' ); 
+
 
 
 function random_str(
@@ -378,14 +374,6 @@ function remove_posts_menu()
 fa_custom_setup_kit('https://kit.fontawesome.com/1db850bdc9.js');		
 
 
-/*
-	 * Google Fonts */
-	 
-function wpb_add_google_fonts() {
-	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,200;0,300;0,400;0,900;1,100;1,300;1,400&family=Open+Sans:wght@300', false ); 
-}
- 
-add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
 
 /** Favicons */

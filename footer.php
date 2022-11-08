@@ -1,4 +1,3 @@
-
 <?php
 $email_address = ! empty( get_field('email_address','options') ) ? '<li class="email"><a href="mailto:'.get_field('email_address','options').'" title="email the team">'.get_field('email_address','options').'</a></li>' : '';
 
@@ -36,8 +35,7 @@ $tiktok = ! empty( get_field('tiktok','options') ) ? '<li><a href="'.get_field('
 					</div>
 					<div class="slide">
 						<div><span>Mark - September 2022</span></div>
-						We had a wonderful stay in this lovely Farmhouse which is extremely well hosted by Samantha. It was out first AirB&B booking and we couldn’t of asked for more.
-						We hope to be back soon.
+						We had a wonderful stay in this lovely Farmhouse which is extremely well hosted by Samantha. It was our first booking at the house and we couldn’t of asked for more. We hope to be back soon.
 						
 					</div>
 				</div>

@@ -36,6 +36,55 @@
             "display_input": 1
         },
         {
+            "key": "field_6356c82d8650e",
+            "label": "Seasons",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6356c8478650f",
+            "label": "High Season",
+            "name": "peak_period",
+            "aria-label": "",
+            "type": "multi_dates_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_input": 1
+        },
+        {
+            "key": "field_63579c0c3fda7",
+            "label": "Mid Season",
+            "name": "mid_period",
+            "aria-label": "",
+            "type": "multi_dates_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_input": 1
+        },
+        {
             "key": "field_6353c20af8167",
             "label": "Features",
             "name": "",
@@ -117,39 +166,6 @@
                     "parent_repeater": "field_63525ac29f889"
                 }
             ]
-        },
-        {
-            "key": "field_6356c82d8650e",
-            "label": "Peak",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_6356c8478650f",
-            "label": "Peak Period",
-            "name": "peak_period",
-            "aria-label": "",
-            "type": "multi_dates_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_input": 1
         }
     ],
     "location": [
@@ -170,5 +186,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666631773
+    "modified": 1666685999
 }

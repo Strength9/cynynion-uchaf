@@ -98,7 +98,11 @@
 							 &:hover {color:$blue;}
 						 }
 					 }
-					 
+					 a { color:$lighterblue;
+						  text-decoration:none;
+						  
+						  &:hover {color:$blue;}
+					  }
 					 @media only screen and (min-width:800px) {
 						 
 						 max-width:900px;

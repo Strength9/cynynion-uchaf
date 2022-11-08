@@ -150,6 +150,10 @@ footer {
 				a {
 					color:#FFF;
 					text-decoration:none;
+					
+					&:hover {
+						color:$lighterblue;
+					}
 				}
 				
 				&:before {
@@ -293,7 +297,11 @@ footer {
 				a {color:#FFF;
 					text-decoration:none;
 					font-weight:400;
-				}		}
+					&:hover {
+						color:$lighterblue;
+					}
+				}		
+			}
 		}
 		.payment {
 			grid-area: payment;
