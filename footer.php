@@ -27,15 +27,15 @@ $tiktok = ! empty( get_field('tiktok','options') ) ? '<li><a href="'.get_field('
 						
 					</div>
 					<div class="slide">
-						<div><span>Paul - July 2022</span></div>
-						Stayed here September 2022. A great place to stay, accommodation and facilities all excellent. Some good places to visit nearby. Thank you.
+						<div><span>Paul - September 2022</span></div>
+						I Stayed here in September 2022. A great place to stay, accommodation and facilities all excellent. Some good places to visit nearby. Thank you.
 			
 						
 		
 					</div>
 					<div class="slide">
 						<div><span>Mark - September 2022</span></div>
-						We had a wonderful stay in this lovely Farmhouse which is extremely well hosted by Samantha. It was our first booking at the house and we couldn’t of asked for more. We hope to be back soon.
+						We had a wonderful stay in this lovely Farmhouse which is extremely well hosted by Samantha. It was our first booking at the house and we couldn’t have asked for more. We hope to be back soon.
 						
 					</div>
 				</div>
