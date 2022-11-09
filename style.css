@@ -1509,7 +1509,7 @@ ul.features li:before {
   }
 }
 .calltoaction .wcp-columns .wcp-column p a {
-  color: #FFF;
+  color: red;
   text-decoration: none;
 }
 .calltoaction .wcp-columns .wcp-column p a:hover {
