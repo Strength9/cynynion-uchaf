@@ -28,7 +28,7 @@ $tiktok = ! empty( get_field('tiktok','options') ) ? '<li><a href="'.get_field('
 					</div>
 					<div class="slide">
 						<div><span>Paul - September 2022</span></div>
-						I Stayed here in September 2022. A great place to stay, accommodation and facilities all excellent. Some good places to visit nearby. Thank you.
+						I stayed here in September 2022. A great place to stay, accommodation and facilities all excellent. Some good places to visit nearby. Thank you.
 			
 						
 		
