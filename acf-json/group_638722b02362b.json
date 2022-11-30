@@ -95,26 +95,6 @@
             "default_value": "rgba(0,0,0,0.2)",
             "enable_opacity": 1,
             "return_format": "string"
-        },
-        {
-            "key": "field_638723c3ae2d1",
-            "label": "",
-            "name": "",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -135,5 +115,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669800961
+    "modified": 1669801061
 }
