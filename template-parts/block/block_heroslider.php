@@ -22,21 +22,30 @@ $sectionclass = ! empty( get_field('hero_size') ) ? 'pagehero '.get_field('hero_
 include('______partials_global.php');
 
 
+if( have_rows('hero_background_image') ): 
+$list = '';
+$i = 1;
+while( have_rows('hero_background_image') ): the_row(); 
+		
 
-$hero_background_image = ! empty( get_field('hero_background_image') ) ? ' style="background-image:url('.get_field('hero_background_image').');"' : '';
+		$list .= '	<li></li>';
+		$style .= ' .cb-slideshow li:nth-child('.$i.') {  background-image: url('.get_sub_field('slider_background').')  }';
+		$i ++;
+
+
+endwhile; 
+ endif;
+
+'';
 $overlay_colour = ! empty( get_field('overlay_colour') ) ? ' style="background-color:'.get_field('overlay_colour').';"' : '';
 
-/* 
-hero_size
-innerpage
-homepage
---------------------------------------------------------------------------- 
-background_colour
-call_to_action_text
 
-*/
-echo '<section '.$anchor.' class="'.$blockclass .'"'.$hero_background_image.'>
+echo '
+<style>'.$style.'</style>
 
+<section '.$anchor.' class="'.$blockclass .'">
+
+<ul class="cb-slideshow">'.$list.'</ul>
 <div class="overlay" '.$overlay_colour.'>
 		 <img src="/wp-content/themes/cynynion-uchaf/assets/img/svg/cyn-white.svg" alt="Cynynion Uchaf - Tranquility & Serenity" />
 
