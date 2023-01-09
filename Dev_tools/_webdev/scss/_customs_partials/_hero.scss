@@ -133,6 +133,8 @@
 		z-index: -100;
 		background-size: cover;
 		overflow: hidden;
+		object-fit: cover;
+		  position: absolute; /* magic sauce */
 	}
 	
 	
