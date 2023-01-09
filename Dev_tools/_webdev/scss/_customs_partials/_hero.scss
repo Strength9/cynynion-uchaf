@@ -97,18 +97,17 @@
 
 .pagehero_video {
 	width:100vw;
-	background-color:paleturquoise;
 	aspect-ratio: 16 / 9;
 	
 	position:relative;
 	background-size:cover;
 	background-position:center center;
 	background-repeat:no-repeat;
-	img {
-		width:90%;
-		max-width:500px;
-	}
 
+div {width: 100%;
+	  padding-bottom: 56.25%;
+	  background: gold;
+}
 	
 	.overlay {
 		background-color:rgba(0,0,0,0.2);

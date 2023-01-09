@@ -2035,16 +2035,16 @@ ul.features {
 
 .pagehero_video {
   width: 100vw;
-  background-color: paleturquoise;
   aspect-ratio: 16/9;
   position: relative;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-.pagehero_video img {
-  width: 90%;
-  max-width: 500px;
+.pagehero_video div {
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: gold;
 }
 .pagehero_video .overlay {
   background-color: rgba(0, 0, 0, 0.2);
