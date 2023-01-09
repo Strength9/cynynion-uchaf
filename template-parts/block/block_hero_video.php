@@ -23,7 +23,7 @@ include('______partials_global.php');
 
 
 
-$hero_background_image = ! empty( get_field('hero_background_image') ) ? ' poster="'.get_field('hero_background_image')." : '';
+$hero_background_image = ! empty( get_field('hero_background_image') ) ? ' poster="'.get_field('hero_background_image').'"' : '';
 $overlay_colour = ! empty( get_field('overlay_colour') ) ? ' style="background-color:'.get_field('overlay_colour').';"' : '';
 
 /* 
