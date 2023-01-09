@@ -2072,8 +2072,16 @@ ul.features {
   background-repeat: no-repeat;
   height: 900px;
 }
+.pagehero_video video {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
 .pagehero_video .overlay {
-  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 10;
   top: 0;
   bottom: 0;
   left: 0;
