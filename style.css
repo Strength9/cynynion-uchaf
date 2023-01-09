@@ -2034,14 +2034,11 @@ ul.features {
 }
 
 .pagehero_video {
+  background-color: red;
   width: 100vw;
   position: relative;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 400px;
   overflow: hidden;
-  padding: 0 !important;
+  height: 400px;
 }
 @media only screen and (min-width: 800px) {
   .pagehero_video {
@@ -2057,6 +2054,16 @@ ul.features {
   .pagehero_video {
     height: 900px;
   }
+}
+.pagehero_video #background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .pagehero_video .overlay {
   z-index: 10;
