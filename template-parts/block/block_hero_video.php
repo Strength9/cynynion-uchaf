@@ -26,17 +26,9 @@ include('______partials_global.php');
 $hero_background_image = ! empty( get_field('hero_background_image') ) ? ' poster="'.get_field('hero_background_image').'"' : '';
 $overlay_colour = ! empty( get_field('overlay_colour') ) ? ' style="background-color:'.get_field('overlay_colour').';"' : '';
 
-/* 
-hero_size
-innerpage
-homepage
---------------------------------------------------------------------------- 
-background_colour
-call_to_action_text
 
-*/
 echo '<section '.$anchor.' class="'.$blockclass .'">
-<video '.$hero_background_image.'  autoplay >
+<video '.$hero_background_image.' autoplay muted loop>
   <source src="https://cynynion-uchaf.co.uk/wp-content/uploads/video/Wales-1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
