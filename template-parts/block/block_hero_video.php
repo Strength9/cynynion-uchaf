@@ -36,7 +36,7 @@ call_to_action_text
 
 */
 echo '<section '.$anchor.' class="'.$blockclass .'">
-<video autoplay '.$hero_background_image.'>
+<video autoplay controls'.$hero_background_image.'>
   <source src="https://cynynion-uchaf.co.uk/wp-content/uploads/video/Wales-1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
