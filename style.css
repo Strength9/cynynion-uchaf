@@ -2044,10 +2044,15 @@ ul.features {
 }
 @media only screen and (min-width: 800px) {
   .pagehero_video {
+    height: 550px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .pagehero_video {
     height: 600px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   .pagehero_video {
     height: 900px;
   }
@@ -2076,7 +2081,7 @@ ul.features {
   align-items: center;
 }
 .pagehero_video .overlay img {
-  width: 90%;
+  width: 80%;
   max-width: 500px;
 }
 
