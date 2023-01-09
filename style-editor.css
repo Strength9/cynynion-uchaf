@@ -2082,7 +2082,7 @@ ul.features {
   background: gold;
   position: relative;
 }
-.pagehero_video div .overlay {
+.pagehero_video .overlay {
   background-color: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;

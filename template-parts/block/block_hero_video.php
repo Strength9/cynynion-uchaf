@@ -36,14 +36,10 @@ call_to_action_text
 
 */
 echo '<section '.$anchor.' class="'.$blockclass .'"'.$hero_background_image.'>
-<div>
-
-
+<div class="pad"></div>
 <div class="overlay" '.$overlay_colour.'>
-		 <img src="/wp-content/themes/cynynion-uchaf/assets/img/svg/cyn-white.svg" alt="Cynynion Uchaf - Tranquility & Serenity" />
-
-</div></div>
-
+	<img src="/wp-content/themes/cynynion-uchaf/assets/img/svg/cyn-white.svg" alt="Cynynion Uchaf - Tranquility & Serenity" />
+</div>
 </section>';
 ?>
 
