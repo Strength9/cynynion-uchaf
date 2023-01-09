@@ -107,7 +107,7 @@
 	
 	
 	overflow:hidden;
-	
+	padding: 0 !important;
 	
 	@media only screen and (min-width:800px) {
 		height:550px;
@@ -123,13 +123,16 @@
 	
 	
 	video {
-		position: absolute;
-		
-		left: 0;
-		top: 0;
-		right: 0;
+		position: absolute; 
+		right: 0; 
 		bottom: 0;
-		height: auto;
+		min-width: 100%; 
+		min-height: 100%;
+		width: auto; 
+		height: auto; 
+		z-index: -100;
+		background-size: cover;
+		overflow: hidden;
 	}
 	
 	
