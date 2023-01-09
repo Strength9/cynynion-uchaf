@@ -15,7 +15,7 @@ if( !empty( $block['data']['_is_preview'] ) ) {
 /* --------------------------------------------------------------------------- */
 
 
-$sectionclass = ! empty( get_field('hero_size') ) ? 'pagehero '.get_field('hero_size') : 'pagehero '.'homepage';
+$sectionclass = 'pagehero_video';
 
 
 
