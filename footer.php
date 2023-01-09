@@ -19,7 +19,7 @@ $tiktok = ! empty( get_field('tiktok','options') ) ? '<li><a href="'.get_field('
 	
 	<div class="overlay">
 		<div>
-			<div class="slider">
+			<!-- <div class="slider">
 				<div class="slidertext">
 					<div class="slide">
 						<div><span>D - October 2022</span></div>
@@ -39,7 +39,8 @@ $tiktok = ! empty( get_field('tiktok','options') ) ? '<li><a href="'.get_field('
 						
 					</div>
 				</div>
-			</div>
+			</div> -->
+			<div class="google"><?php echo do_shortcode["[trustindex no-registration=google]"];?></div>
 		</div>
 	</div>
 </section>
