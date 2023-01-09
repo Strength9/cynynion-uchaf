@@ -2045,8 +2045,9 @@ ul.features {
   width: 100%;
   padding-bottom: 56.25%;
   background: gold;
+  position: relative;
 }
-.pagehero_video .overlay {
+.pagehero_video div .overlay {
   background-color: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
