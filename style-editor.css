@@ -2076,7 +2076,7 @@ ul.features {
   width: 90%;
   max-width: 500px;
 }
-.pagehero_video div {
+.pagehero_video div.padd {
   width: 100%;
   padding-bottom: 56.25%;
   background: gold;
