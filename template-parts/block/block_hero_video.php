@@ -35,7 +35,7 @@ background_colour
 call_to_action_text
 
 */
-echo '<section '.$anchor.' class="'.$blockclass .'"'.$hero_background_image.'>
+echo '<section '.$anchor.' class="'.$blockclass .'">
 <video autoplay '.$hero_background_image.'>
   <source src="/wp-content/uploads/video/Wales-1.mp4" type="video/mp4">
 Your browser does not support the video tag.
