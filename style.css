@@ -2039,17 +2039,30 @@ ul.features {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 900px;
+  height: 400px;
   overflow: hidden;
+}
+@media only screen and (min-width: 800px) {
+  .pagehero_video {
+    height: 600px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .pagehero_video {
+    height: 900px;
+  }
 }
 .pagehero_video video {
   position: absolute;
-  left: 50%; /* % of surrounding element */
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
 }
 .pagehero_video .overlay {
   z-index: 10;
+  background-color: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
   left: 0;
