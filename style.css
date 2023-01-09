@@ -2058,20 +2058,6 @@ ul.features {
     height: 900px;
   }
 }
-.pagehero_video video {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100% !important;
-  min-height: 100% !important;
-  width: 100% !important;
-  height: auto;
-  z-index: -100;
-  background-size: cover;
-  overflow: hidden;
-  object-fit: cover;
-  position: absolute; /* magic sauce */
-}
 .pagehero_video .overlay {
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.2);
