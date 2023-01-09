@@ -30,7 +30,7 @@ $overlay_colour = ! empty( get_field('overlay_colour') ) ? ' style="background-c
 echo '<section '.$anchor.' class="'.$blockclass .'">
 
 <video id="background-video" autoplay loop muted '.$hero_background_image.'>
-<source src="/wp-content/uploads/videos/Wales-1.mp4" type="video/mp4">
+<source src="/wp-content/uploads/video/Wales-1.mp4" type="video/mp4">
 </video>
 <div class="overlay" '.$overlay_colour.'>
 	<img src="/wp-content/themes/cynynion-uchaf/assets/img/svg/cyn-white.svg" alt="Cynynion Uchaf - Tranquility & Serenity" />
