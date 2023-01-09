@@ -2062,6 +2062,10 @@ ul.features {
   align-content: center;
   align-items: center;
 }
+.pagehero_video .overlay img {
+  width: 90%;
+  max-width: 500px;
+}
 
 .localattractionsgrid h2 {
   font-weight: 900;
