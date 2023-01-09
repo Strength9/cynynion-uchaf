@@ -824,7 +824,7 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li > ul li {
   align-self: auto;
   margin: 0 auto;
   width: 90%;
-  max-width: 750px;
+  max-width: 1320px;
 }
 .quotations .overlay > div .slider {
   margin: auto;
